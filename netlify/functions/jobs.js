@@ -12,13 +12,13 @@ exports.handler = async (event) => {
     return { statusCode: 204, headers: corsHeaders, body: '' };
   }
 
-  const guid = process.env.PAYLOCITY_FEED_GUID;
-  if (!guid) {
+  const feedUrl = paylocityFeedUrl(process.env.PAYLOCITY_FEED_GUID);
+  if (!feedUrl) {
     return json(500, { error: 'Missing PAYLOCITY_FEED_GUID' });
   }
 
   try {
-    const response = await fetch(FEED_BASE_URL + encodeURIComponent(guid), {
+    const response = await fetch(feedUrl, {
       headers: { Accept: 'application/json' },
     });
 
@@ -49,6 +49,13 @@ function json(statusCode, body, extraHeaders = {}) {
     headers: { ...corsHeaders, ...extraHeaders },
     body: JSON.stringify(body),
   };
+}
+
+function paylocityFeedUrl(value) {
+  const trimmed = String(value || '').trim();
+  if (!trimmed) return '';
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  return FEED_BASE_URL + encodeURIComponent(trimmed);
 }
 
 function extractJobs(payload) {
