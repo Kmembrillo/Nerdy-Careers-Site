@@ -39,6 +39,7 @@
     const target = parseFloat(el.dataset.count);
     const decimals = parseInt(el.dataset.decimals || '0', 10);
     const useThousands = el.dataset.thousands === '1';
+    const prefix = el.dataset.prefix || '';
     const suffix = el.dataset.suffix || '';
     const supEl = el.querySelector('.sup');
     const supHTML = supEl ? supEl.outerHTML : '';
@@ -52,7 +53,7 @@
       if (decimals > 0) display = v.toFixed(decimals);
       else if (useThousands) display = Math.round(v).toLocaleString();
       else display = Math.round(v).toString();
-      el.innerHTML = display + suffix + supHTML;
+      el.innerHTML = prefix + display + suffix + supHTML;
       if (t < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
