@@ -1,0 +1,1 @@
+{"name":"nerdy-careers","version":"1.0.0","private":true,"scripts":{"dev":"netlify dev","start":"netlify dev"},"devDependencies":{"netlify-cli":"^17.0.0"}}
