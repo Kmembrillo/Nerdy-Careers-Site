@@ -47,7 +47,89 @@
   <section class="article-shell">
     <div class="wrap">
       <article class="article-body">
-        <!-- ADD ARTICLE CONTENT HERE -->
+        <p>"AI-native engineer" is a job title that didn't exist three years ago. At Nerdy, it's the default. Here's what a typical Tuesday looks like for an engineer on our Live + AI platform team.</p>
+
+        <hr class="article-divider">
+
+        <h2>8:30 AM — ASYNC STANDUP AND CONTEXT LOAD</h2>
+        <p>The day starts async. Our standup lives in Slack — a short check-in: what shipped yesterday, what's in flight today, any blockers. Takes five minutes to write, two to read the team's.</p>
+        <p>Before opening any code, the engineer pulls up the on-call dashboard. Overnight, three anomalies were flagged by our AI monitoring agents. Two were auto-resolved with a summary already drafted. One needs a human look — a latency spike in the session feedback loop that correlates with a model rollout from the day before.</p>
+        <p>The engineer spends fifteen minutes reviewing the agent's root cause hypothesis. It's right. They confirm the rollback, add a note to the postmortem draft the agent already started, and move on.</p>
+        <aside class="article-callout">
+          <strong>Callout</strong>
+          A potential production incident was triaged, diagnosed, and partially resolved before the engineer had their first cup of coffee — because the agents had context, not just alerts.
+        </aside>
+
+        <hr class="article-divider">
+
+        <h2>9:15 AM — FEATURE WORK: THE TUTOR FEEDBACK LOOP</h2>
+        <p>Today's main task: improving the latency of the real-time feedback signal that tutors see during a session. The current p95 is 1.2 seconds. The target is under 200ms.</p>
+        <p>The engineer opens Claude Code and describes the problem: the current architecture, the bottleneck (a synchronous model call in the hot path), and three potential approaches. Claude drafts a refactor proposal — moving the model call async with optimistic UI updates and a fallback state.</p>
+        <p>The engineer reads it carefully. The approach is right but the fallback logic has an edge case — what if the model call fails entirely mid-session? They push back in the conversation, Claude revises, and within twenty minutes they have a plan they're confident in.</p>
+        <p>They write the implementation themselves — Claude-assisted but engineer-driven. The hard part isn't the code. It's the judgment call about what the tutor experience should feel like when the AI response is delayed.</p>
+
+        <hr class="article-divider">
+
+        <h2>11:00 AM — PR REVIEW WITH AI ASSIST</h2>
+        <p>A teammate has a PR up for a new eval framework component. It's 340 lines. The engineer uses Claude to generate a first-pass review: looking for logic errors, edge cases, test coverage gaps, and API surface concerns.</p>
+        <p>Claude finds two things worth flagging: a potential race condition in the eval runner and a missing test for the empty-results case. The engineer adds their own observations — a naming inconsistency and a question about the retry behavior — and posts the review.</p>
+        <p>Total time: 25 minutes for a 340-line PR. The review is thorough.</p>
+
+        <hr class="article-divider">
+
+        <h2>12:30 PM — LUNCH AND A SLACK THREAD WORTH READING</h2>
+        <p>Over lunch, there's a thread in #live-ai-platform about a learner behavior pattern the data team surfaced: students who get a hint from Maya in the first five minutes of a session have significantly higher session completion rates. Someone's already proposed a feature experiment. The engineer bookmarks it for the afternoon.</p>
+
+        <hr class="article-divider">
+
+        <h2>1:30 PM — WRITING EVALS BEFORE WRITING CODE</h2>
+        <p>Before implementing the async refactor, the engineer writes the evals. This is standard practice at Nerdy: the eval defines what "good" looks like before any code is written.</p>
+        <p>The evals cover three cases:</p>
+        <ul>
+          <li>Feedback signal delivered under 200ms on 95% of requests</li>
+          <li>Fallback state renders correctly when model response exceeds 500ms</li>
+          <li>Session experience is unchanged when model call fails entirely</li>
+        </ul>
+        <p>The eval suite runs in CI. Any future change that breaks these will be caught before it ships. The engineer commits the evals first, then starts the implementation.</p>
+
+        <hr class="article-divider">
+
+        <h2>3:00 PM — CROSS-FUNCTIONAL SYNC WITH PRODUCT</h2>
+        <p>A 30-minute sync with the PM who owns the tutor experience. They review the latency improvement work, align on the rollout plan (gradual, with a holdout group), and discuss the Maya hint experiment from lunch.</p>
+        <p>The PM has already drafted a spec — including the eval criteria — for the hint experiment. The engineer reads it in the meeting and has questions about the measurement approach. They work through it together. The spec gets revised before the meeting ends.</p>
+        <p>This is what product and engineering working together actually means here: shared accountability for outcomes, not handoffs between functions.</p>
+
+        <hr class="article-divider">
+
+        <h2>4:00 PM — IMPLEMENTATION AND FIRST TESTS</h2>
+        <p>The async refactor is cleaner than expected. The Claude-drafted plan was solid; the implementation takes about 90 minutes. The engineer runs the eval suite — two tests fail on the first pass, both related to the fallback state timing. They debug, fix, run again. Green.</p>
+        <p>They open a draft PR and add a description: what changed, why, what the evals cover, and what they'd want a reviewer to pay attention to. The description is written for a human, not a ticket system.</p>
+
+        <hr class="article-divider">
+
+        <h2>5:30 PM — WRAPPING UP</h2>
+        <p>The engineer merges a small hotfix from earlier in the day. They update their async standup for tomorrow and close their laptop.</p>
+        <p>The feedback from their PR comes in the next morning. Two comments, both useful. They'll address them before standup.</p>
+
+        <hr class="article-divider">
+
+        <h2>WHAT MAKES THIS DIFFERENT</h2>
+
+        <h3>AI IS AMBIENT, NOT CEREMONIAL</h3>
+        <p>Claude isn't opened for special occasions. It's in the flow of normal work — reviewing PRs, drafting plans, debugging, writing evals. The engineer doesn't "use AI"; they work with AI the way they work with a terminal.</p>
+
+        <h3>EVALS COME FIRST</h3>
+        <p>The discipline of writing evals before implementation forces clarity. It also means the engineer owns quality — not as a QA handoff but as part of how they build.</p>
+
+        <h3>OWNERSHIP IS REAL</h3>
+        <p>The engineer owns the feedback loop end-to-end: the architecture, the implementation, the evals, the rollout, and the monitoring. That accountability is matched by genuine autonomy — no one is waiting on a ticket to be triaged.</p>
+
+        <h3>THE PACE IS REAL</h3>
+        <p>From deciding to fix the latency issue to having a tested, eval-covered implementation in a draft PR took roughly six hours of focused work. That's not heroics. It's the default here.</p>
+
+        <hr class="article-divider">
+
+        <p>Interested in building here? See open roles at <a href="https://careers.nerdy.com" target="_blank" rel="noopener">careers.nerdy.com</a>.</p>
       </article>
     </div>
   </section>
