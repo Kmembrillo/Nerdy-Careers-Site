@@ -63,3 +63,28 @@
   }, { threshold: 0.4 });
   document.querySelectorAll('.stat-num[data-count]').forEach(el => statObs.observe(el));
 
+  // CTA banner submission → Google Doc via Apps Script Web App
+  const ctaForm = document.getElementById('cta-form');
+  if (ctaForm) {
+    ctaForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const submission = document.getElementById('cta-textarea').value;
+      const submitBtn = ctaForm.querySelector('.cta-form-submit');
+      submitBtn.disabled = true;
+
+      fetch('https://script.google.com/a/macros/varsitytutors.com/s/AKfycbwveLC8WKIWjQwTMsbTk7zfIUTcEqR-V9Yzf0caqSpqzX6JsOT2_2FhwmthFqFxFnA3KA/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'submission=' + encodeURIComponent(submission)
+      })
+        .then(() => {
+          ctaForm.style.display = 'none';
+          document.getElementById('cta-success').style.display = 'block';
+        })
+        .catch(() => {
+          submitBtn.disabled = false;
+          alert("Something went wrong sending your submission — please email careers@nerdy.com directly.");
+        });
+    });
+  }
+
