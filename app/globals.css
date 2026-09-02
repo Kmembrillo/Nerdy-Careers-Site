@@ -1268,12 +1268,35 @@ nav.scrolled .logo-careers {
   padding: 32px;
 }
 
+.resource-card:not(.dark-card),
+.resource-card:not(.dark-card):hover {
+  background: var(--white);
+  color: var(--ink);
+}
+
+.resource-card:not(.dark-card) h3,
+.resource-card:not(.dark-card):hover h3 {
+  color: var(--ink);
+}
+
+.resource-card:not(.dark-card) p,
+.resource-card:not(.dark-card):hover p {
+  color: var(--ink-60);
+}
+
+.resource-card:not(.dark-card) .resource-link,
+.resource-card:not(.dark-card):hover .resource-link {
+  color: var(--ink);
+}
+
 .resource-card.dark-card {
-  background: var(--navy);
+  background: var(--navy) !important;
   border-color: rgba(255, 255, 255, 0.14);
+  color: var(--white);
 }
 
 .resource-card.dark-card:hover {
+  background: var(--navy) !important;
   border-color: rgba(255, 255, 255, 0.24);
 }
 
@@ -1285,6 +1308,15 @@ nav.scrolled .logo-careers {
 }
 
 .resource-card.dark-card p {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.resource-card.dark-card h3,
+.resource-card.dark-card:hover h3 {
+  color: var(--white);
+}
+
+.resource-card.dark-card:hover p {
   color: rgba(255, 255, 255, 0.74);
 }
 
