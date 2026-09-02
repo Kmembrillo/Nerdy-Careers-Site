@@ -1268,11 +1268,24 @@ nav.scrolled .logo-careers {
   padding: 32px;
 }
 
+.resource-card.dark-card {
+  background: var(--navy);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.resource-card.dark-card:hover {
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
 .resource-card p {
   color: var(--ink-60);
   font-size: 16px;
   line-height: 1.62;
   margin: 22px 0 0;
+}
+
+.resource-card.dark-card p {
+  color: rgba(255, 255, 255, 0.74);
 }
 
 .resource-card.featured {
