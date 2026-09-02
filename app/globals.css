@@ -1270,23 +1270,23 @@ nav.scrolled .logo-careers {
 
 .resource-card:not(.dark-card),
 .resource-card:not(.dark-card):hover {
-  background: var(--white);
-  color: var(--ink);
+  background: var(--white) !important;
+  color: var(--ink) !important;
 }
 
 .resource-card:not(.dark-card) h3,
 .resource-card:not(.dark-card):hover h3 {
-  color: var(--ink);
+  color: var(--ink) !important;
 }
 
 .resource-card:not(.dark-card) p,
 .resource-card:not(.dark-card):hover p {
-  color: var(--ink-60);
+  color: var(--ink-60) !important;
 }
 
 .resource-card:not(.dark-card) .resource-link,
 .resource-card:not(.dark-card):hover .resource-link {
-  color: var(--ink);
+  color: var(--ink) !important;
 }
 
 .resource-card.dark-card {

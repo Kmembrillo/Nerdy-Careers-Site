@@ -471,9 +471,15 @@ function BenchForm() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
+  const canSubmit = message.trim().length >= 20;
 
   async function handleSubmit(event) {
     event.preventDefault();
+    if (!canSubmit) {
+      setError("Please include a little more detail about what you built.");
+      return;
+    }
+
     setStatus("submitting");
     setError("");
 
@@ -522,7 +528,11 @@ function BenchForm() {
           <span className="pulse-dot magenta" /> Reviewed by recruiting &
           engineering leaders · careers@nerdy.com
         </span>
-        <button className="btn-primary" disabled={status === "submitting"} type="submit">
+        <button
+          className="btn-primary"
+          disabled={status === "submitting" || !canSubmit}
+          type="submit"
+        >
           {status === "submitting" ? "Sending…" : "Send →"}
         </button>
       </div>
