@@ -517,9 +517,11 @@ function BenchForm() {
   return (
     <form className="bench-form" onSubmit={handleSubmit}>
       <textarea
+        autoComplete="off"
         placeholder="Hi Nerdy — here's something I built. It does X, learns from Y, and was made with Z. Here's why I'd be a great fit for the Product Engineering bench…"
         required
         minLength={20}
+        spellCheck={false}
         value={message}
         onChange={(event) => setMessage(event.target.value)}
       />
