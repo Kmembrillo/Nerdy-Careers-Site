@@ -229,6 +229,7 @@ nav {
 .nav-inner {
   align-items: center;
   display: flex;
+  gap: 28px;
   height: 128px;
   justify-content: space-between;
   margin-inline: auto;
@@ -289,17 +290,21 @@ nav.scrolled .logo-careers {
 .nav-links {
   align-items: center;
   display: flex;
-  gap: 30px;
+  flex: 0 1 auto;
+  gap: 22px;
+  justify-content: flex-end;
   list-style: none;
   margin: 0;
+  min-width: 0;
   padding: 0;
 }
 
 .nav-links a {
   color: var(--ink-60);
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 700;
   transition: color 0.18s ease;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
