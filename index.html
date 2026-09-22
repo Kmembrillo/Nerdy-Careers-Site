@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Careers at Nerdy: build the Live + AI learning platform with an AI-native team.">
+  <title>Nerdy Careers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..800,20..100,0..1&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --cream: #F3EEE5;
+      --cream-deep: #ECE4D4;
+      --ink: #23201B;
+      --ink-soft: rgba(35, 32, 27, 0.68);
+      --ink-muted: rgba(35, 32, 27, 0.48);
+      --navy: #223349;
+      --navy-hover: #33496a;
+      --brass: #8C6A45;
+      --hairline: #DCD2BC;
+      --paper: #FBF8F2;
+      --paper-soft: rgba(251, 248, 242, 0.74);
+      --focus: #6A4B2B;
+      --font-display: "Fraunces", Georgia, serif;
+      --font-ui: "Schibsted Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --frame-gap: clamp(12px, 2vw, 24px);
+      --page-pad: clamp(20px, 5vw, 72px);
+      --section-y: clamp(76px, 11vw, 148px);
+      --max: 1240px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--cream-deep);
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 16% 6%, rgba(140, 106, 69, 0.16), transparent 28rem),
+        linear-gradient(180deg, var(--cream-deep), var(--cream));
+      color: var(--ink);
+      font-family: var(--font-ui);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: var(--frame-gap);
+      border: 1px solid var(--hairline);
+      pointer-events: none;
+      z-index: 30;
+    }
+
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    button, input, textarea { font: inherit; }
+
+    :focus-visible {
+      outline: 3px solid rgba(140, 106, 69, 0.52);
+      outline-offset: 4px;
+    }
+
+    .site-canvas {
+      min-height: calc(100vh - (var(--frame-gap) * 2));
+      margin: var(--frame-gap);
+      background: var(--cream);
+      border: 1px solid var(--hairline);
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - (var(--page-pad) * 2)));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: var(--frame-gap);
+      z-index: 20;
+      background: rgba(243, 238, 229, 0.88);
+      border-bottom: 1px solid var(--hairline);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .logo-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      text-decoration: none;
+      min-width: 0;
+    }
+
+    .logo-wordmark img {
+      width: 132px;
+      height: auto;
+    }
+
+    .logo-divider {
+      width: 1px;
+      height: 34px;
+      background: var(--hairline);
+    }
+
+    .logo-subline {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3vw, 38px);
+      font-weight: 520;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(14px, 2vw, 28px);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--ink-soft);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: color 160ms ease;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .btn,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+    }
+
+    .btn {
+      min-height: 48px;
+      padding: 12px 22px;
+      border: 1px solid var(--navy);
+      background: var(--navy);
+      color: var(--paper);
+      font-size: 0.94rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+    }
+
+    .btn:hover {
+      background: var(--navy-hover);
+      border-color: var(--navy-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--hairline);
+    }
+
+    .btn.secondary:hover {
+      background: var(--paper-soft);
+      border-color: var(--brass);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--brass);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--brass);
+    }
+
+    .hero {
+      padding: clamp(76px, 11vw, 142px) 0 clamp(72px, 9vw, 116px);
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.72fr);
+      gap: clamp(42px, 7vw, 96px);
+      align-items: end;
+    }
+
+    .hero-copy {
+      max-width: 850px;
+    }
+
+    h1, h2, h3, p { margin-block-start: 0; }
+
+    h1,
+    .section-title,
+    .metric-value,
+    .photo-callout,
+    .quote {
+      font-family: var(--font-display);
+      font-variation-settings: "SOFT" 72, "WONK" 1;
+    }
+
+    h1 {
+      margin: 28px 0 26px;
+      font-size: clamp(54px, 8.4vw, 124px);
+      line-height: 0.9;
+      letter-spacing: -0.07em;
+      font-weight: 620;
+      max-width: 920px;
+    }
+
+    .display-italic {
+      color: var(--brass);
+      font-style: italic;
+      font-weight: 520;
+    }
+
+    .hero-lede {
+      max-width: 650px;
+      color: var(--ink-soft);
+      font-size: clamp(1.08rem, 1.6vw, 1.32rem);
+      line-height: 1.58;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .hero-panel {
+      border-left: 1px solid var(--hairline);
+      padding-left: clamp(26px, 4vw, 46px);
+    }
+
+    .hero-panel-photo {
+      border-radius: 999px 999px 22px 22px;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background: var(--paper);
+      border: 1px solid var(--hairline);
+    }
+
+    .hero-panel-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-caption {
+      margin: 22px 0 0;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    .hero-caption strong {
+      display: block;
+      color: var(--ink);
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .marquee {
+      overflow: hidden;
+      border-bottom: 1px solid var(--hairline);
+      background: var(--paper);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 36px;
+      padding: 18px 0;
+      animation: marquee 38s linear infinite;
+    }
+
+    .marquee span {
+      color: var(--ink-soft);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .marquee span::after {
+      content: "/";
+      color: var(--brass);
+      margin-left: 36px;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .section {
+      padding: var(--section-y) 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(170px, 0.28fr) minmax(0, 1fr);
+      gap: clamp(32px, 6vw, 96px);
+      align-items: start;
+    }
+
+    .section-kicker {
+      color: var(--brass);
+      border-top: 1px solid var(--brass);
+      padding-top: 16px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.17em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(38px, 5vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      font-weight: 620;
+      max-width: 920px;
+    }
+
+    .section-copy {
+      max-width: 720px;
+      margin-top: 24px;
+      color: var(--ink-soft);
+      font-size: clamp(1rem, 1.35vw, 1.16rem);
+    }
+
+    .mission-proof {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(280px, 0.5fr);
+      gap: clamp(26px, 5vw, 64px);
+      margin-top: clamp(44px, 7vw, 84px);
+      align-items: stretch;
+    }
+
+    .quote {
+      margin: 0;
+      padding: clamp(28px, 4vw, 46px) 0 0;
+      border-top: 1px solid var(--hairline);
+      font-size: clamp(28px, 3.4vw, 48px);
+      line-height: 1.06;
+      letter-spacing: -0.045em;
+      font-weight: 520;
+    }
+
+    .quote cite {
+      display: block;
+      margin-top: 24px;
+      color: var(--ink-soft);
+      font-family: var(--font-ui);
+      font-size: 0.95rem;
+      font-style: normal;
+      letter-spacing: 0;
+    }
+
+    .proof-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--hairline);
+    }
+
+    .proof-list li {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--hairline);
+      color: var(--ink-soft);
+    }
+
+    .proof-list strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .stats {
+      background: var(--navy);
+      color: var(--paper);
+    }
+
+    .stats .section-kicker {
+      color: rgba(251, 248, 242, 0.72);
+      border-color: rgba(251, 248, 242, 0.28);
+    }
+
+    .stats-intro {
+      color: rgba(251, 248, 242, 0.76);
+      max-width: 680px;
+      margin: 0 0 46px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      border-top: 1px solid rgba(251, 248, 242, 0.24);
+      border-left: 1px solid rgba(251, 248, 242, 0.24);
+    }
+
+    .metric {
+      min-height: 190px;
+      padding: clamp(22px, 3vw, 34px);
+      border-right: 1px solid rgba(251, 248, 242, 0.24);
+      border-bottom: 1px solid rgba(251, 248, 242, 0.24);
+    }
+
+    .metric-value {
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+      font-weight: 650;
+    }
+
+    .metric-label {
+      margin-top: 16px;
+      color: rgba(251, 248, 242, 0.72);
+      font-size: 0.92rem;
+    }
+
+    .metric-note {
+      margin-top: 30px;
+      color: rgba(251, 248, 242, 0.56);
+      font-size: 0.8rem;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      grid-template-rows: 260px 260px;
+      gap: 18px;
+      margin-top: clamp(42px, 7vw, 84px);
+    }
+
+    .team-photo {
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid var(--hairline);
+      background: var(--paper);
+    }
+
+    .team-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .team-photo.large { grid-row: span 2; }
+
+    .photo-callout {
+      border-top: 1px solid var(--hairline);
+      padding-top: 26px;
+      font-size: clamp(28px, 4vw, 54px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      font-weight: 600;
+    }
+
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--hairline);
+      border-left: 1px solid var(--hairline);
+      margin-top: clamp(42px, 7vw, 78px);
+    }
+
+    .practice-item {
+      min-height: 280px;
+      padding: clamp(26px, 4vw, 42px);
+      border-right: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+      background: rgba(251, 248, 242, 0.36);
+    }
+
+    .practice-item:nth-child(2),
+    .practice-item:nth-child(3) {
+      background: transparent;
+    }
+
+    .practice-num {
+      color: var(--brass);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .practice-item h3,
+    .resource-card h3,
+    .role-title {
+      font-family: var(--font-display);
+      font-variation-settings: "SOFT" 64, "WONK" 1;
+      font-weight: 560;
+      letter-spacing: -0.04em;
+    }
+
+    .practice-item h3 {
+      margin: 0 0 14px;
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.03;
+    }
+
+    .practice-item p {
+      margin: 0;
+      color: var(--ink-soft);
+      max-width: 520px;
+    }
+
+    .principles {
+      background: var(--paper);
+    }
+
+    .principle-stack {
+      margin-top: clamp(42px, 7vw, 76px);
+      border-top: 1px solid var(--hairline);
+    }
+
+    .principle-row {
+      display: grid;
+      grid-template-columns: 96px minmax(0, 0.78fr) minmax(0, 0.78fr);
+      gap: clamp(20px, 4vw, 58px);
+      padding: clamp(30px, 5vw, 52px) 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .principle-index {
+      color: var(--brass);
+      font-family: var(--font-display);
+      font-size: clamp(34px, 4vw, 58px);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+
+    .principle-row h3 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3.2vw, 44px);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      font-weight: 560;
+    }
+
+    .principle-row p {
+      margin: 0;
+      color: var(--ink-soft);
+    }
+
+    .roles {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .roles .section-kicker {
+      color: rgba(251, 248, 242, 0.68);
+      border-color: rgba(251, 248, 242, 0.26);
+    }
+
+    .roles .section-copy {
+      color: rgba(251, 248, 242, 0.72);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: clamp(36px, 5vw, 56px) 0 26px;
+    }
+
+    .filter-pill {
+      border: 1px solid rgba(251, 248, 242, 0.28);
+      background: transparent;
+      color: rgba(251, 248, 242, 0.78);
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 800;
+      padding: 10px 16px;
+      transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+    }
+
+    .filter-pill:hover,
+    .filter-pill[aria-pressed="true"] {
+      background: var(--paper);
+      border-color: var(--paper);
+      color: var(--ink);
+    }
+
+    .filter-pill .count {
+      margin-left: 8px;
+      opacity: 0.62;
+      font-size: 0.75rem;
+    }
+
+    .roles-status {
+      min-height: 24px;
+      color: rgba(251, 248, 242, 0.68);
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    .role-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid rgba(251, 248, 242, 0.18);
+    }
+
+    .role-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(160px, 0.36fr) minmax(160px, 0.36fr) auto;
+      gap: clamp(18px, 3vw, 42px);
+      align-items: center;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(251, 248, 242, 0.18);
+      color: inherit;
+      text-decoration: none;
+      transition: padding 160ms ease, color 160ms ease;
+    }
+
+    .role-row:hover {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .role-title {
+      font-size: clamp(24px, 2.7vw, 38px);
+      line-height: 1.02;
+      margin-bottom: 8px;
+    }
+
+    .role-meta,
+    .role-location,
+    .role-date {
+      color: rgba(251, 248, 242, 0.62);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .role-location,
+    .role-date {
+      color: rgba(251, 248, 242, 0.78);
+    }
+
+    .role-arrow {
+      font-size: 1.35rem;
+      color: var(--paper);
+    }
+
+    .roles-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin-top: 34px;
+      flex-wrap: wrap;
+    }
+
+    .all-roles {
+      color: var(--paper);
+      font-weight: 800;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(251, 248, 242, 0.6);
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr;
+      border-top: 1px solid var(--hairline);
+      border-left: 1px solid var(--hairline);
+      margin-top: clamp(42px, 7vw, 76px);
+    }
+
+    .resource-card {
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      padding: clamp(26px, 4vw, 40px);
+      border-right: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+      background: var(--paper-soft);
+      text-decoration: none;
+      transition: background 160ms ease;
+    }
+
+    .resource-card:hover {
+      background: var(--paper);
+    }
+
+    .resource-card.featured {
+      background: var(--navy);
+      color: var(--paper);
+    }
+
+    .resource-tag {
+      align-self: flex-start;
+      margin-bottom: 26px;
+      border: 1px solid currentColor;
+      color: var(--brass);
+      padding: 7px 12px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .resource-card.featured .resource-tag {
+      color: rgba(251, 248, 242, 0.78);
+    }
+
+    .resource-card h3 {
+      margin: 0;
+      font-size: clamp(28px, 3vw, 44px);
+      line-height: 1.02;
+    }
+
+    .resource-card p {
+      margin: 18px 0 0;
+      color: var(--ink-soft);
+    }
+
+    .resource-card.featured p {
+      color: rgba(251, 248, 242, 0.72);
+    }
+
+    .resource-link {
+      margin-top: auto;
+      padding-top: 36px;
+      font-weight: 800;
+    }
+
+    .closing {
+      padding: clamp(84px, 13vw, 164px) 0;
+      text-align: left;
+    }
+
+    .closing .section-title {
+      max-width: 880px;
+    }
+
+    .closing-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .site-footer {
+      background: var(--navy);
+      color: var(--paper);
+      padding: 52px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo img {
+      width: 116px;
+      height: auto;
+      margin-bottom: 18px;
+    }
+
+    .footer-copy {
+      max-width: 420px;
+      color: rgba(251, 248, 242, 0.7);
+      margin: 0;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: rgba(251, 248, 242, 0.76);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .footer-links a:hover {
+      border-color: currentColor;
+    }
+
+    @media (max-width: 1040px) {
+      .nav-links { display: none; }
+      .hero-grid,
+      .mission-proof,
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel {
+        border-left: 0;
+        padding-left: 0;
+        max-width: 520px;
+      }
+
+      .photo-grid {
+        grid-template-rows: none;
+      }
+
+      .team-photo,
+      .team-photo.large {
+        min-height: 280px;
+        grid-row: auto;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .practice-grid,
+      .resources-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      body::before { inset: 8px; }
+      .site-canvas { margin: 8px; }
+      .site-header { top: 8px; }
+      .wrap { width: min(var(--max), calc(100% - 40px)); }
+      .nav { min-height: 74px; }
+      .logo-wordmark img { width: 100px; }
+      .logo-divider { height: 28px; }
+      .logo-subline { font-size: 24px; }
+      h1 { font-size: clamp(50px, 17vw, 74px); }
+      .section-grid,
+      .principle-row,
+      .role-row {
+        grid-template-columns: 1fr;
+      }
+
+      .section-kicker {
+        max-width: 220px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .role-row:hover {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .role-arrow {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-canvas">
+    <header class="site-header">
+      <nav class="wrap nav" aria-label="Main navigation">
+        <a href="#top" class="logo-lockup" aria-label="Nerdy Careers home">
+          <span class="logo-wordmark"><img src="assets/nerdy-wordmark-ink.svg" alt="Nerdy"></span>
+          <span class="logo-divider" aria-hidden="true"></span>
+          <span class="logo-subline">Careers</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#work">AI in practice</a></li>
+          <li><a href="#roles">Open roles</a></li>
+          <li><a href="#resources">Candidate prep</a></li>
+        </ul>
+        <a class="btn secondary" href="#roles">See roles</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Careers at Nerdy</span>
+            <h1>Build the future of <span class="display-italic">live learning</span>.</h1>
+            <p class="hero-lede">Nerdy is the company behind Varsity Tutors and the Live + AI platform. We bring expert instruction, real-time product systems, and practical AI together so learners get personal support at scale.</p>
+            <div class="hero-actions">
+              <a class="btn" href="#roles">Explore open roles <span aria-hidden="true">-&gt;</span></a>
+              <a class="btn secondary" href="#work">How we work</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Nerdy team">
+            <div class="hero-panel-photo">
+              <img src="team-photo-1.jpeg" alt="Nerdy teammates gathered at a company event">
+            </div>
+            <p class="hero-caption"><strong>Global, remote-first, outcomes-focused.</strong> We work across engineering, product, sales, support, operations, and learning science.</p>
+          </aside>
+        </div>
+      </section>
+
+      <div class="marquee" aria-label="Nerdy careers themes">
+        <div class="marquee-track">
+          <span>Live learning</span><span>AI-native workflows</span><span>Founder pace</span><span>High ownership</span><span>Real learner outcomes</span>
+          <span>Live learning</span><span>AI-native workflows</span><span>Founder pace</span><span>High ownership</span><span>Real learner outcomes</span>
+        </div>
+      </div>
+
+      <section class="section" id="mission">
+        <div class="wrap section-grid">
+          <div class="section-kicker">The mission</div>
+          <div>
+            <h2 class="section-title">Personal learning should feel like it was built for one person, then work for millions.</h2>
+            <p class="section-copy">We are building the systems that help instructors, learners, schools, and families make progress in real time. The work is product, platform, operations, and human craft all at once.</p>
+
+            <div class="mission-proof">
+              <blockquote class="quote">
+                The best learning moments are personal. Our job is to make those moments easier to create, measure, and improve.
+                <cite>Careers at Nerdy</cite>
+              </blockquote>
+              <ul class="proof-list" aria-label="What guides the team">
+                <li><strong>Learner signal</strong> We use product data, instructor feedback, and research to understand what helps learners move forward.</li>
+                <li><strong>Live expertise</strong> AI supports the work, but human instruction remains at the center of the experience.</li>
+                <li><strong>Practical shipping</strong> Teams prototype, evaluate, launch, and learn with tight feedback loops.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section stats" aria-labelledby="stats-title">
+        <div class="wrap section-grid">
+          <div class="section-kicker">Company snapshot</div>
+          <div>
+            <h2 class="section-title" id="stats-title">Recent public-company metrics.</h2>
+            <p class="stats-intro" id="stats-source">Q2 2026 figures from the shareholder letter. Update the stats config in the page script each quarter.</p>
+            <div class="stats-grid" id="stats-grid" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="team-title">
+        <div class="wrap section-grid">
+          <div class="section-kicker">The team</div>
+          <div>
+            <h2 class="section-title" id="team-title">Meet the Nerds building it.</h2>
+            <p class="section-copy">Our teams span product builders, educators, designers, analysts, sellers, and operators across remote hubs and company gatherings.</p>
+            <div class="photo-grid">
+              <div class="team-photo large"><img src="team-photo-2.jpeg" alt="Nerdy team members at a company summit"></div>
+              <div class="team-photo"><img src="team-photo-3.jpeg" alt="Nerdy teammates socializing at an evening event"></div>
+              <div class="team-photo"><img src="team-photo-4.jpeg" alt="Nerdy teammates gathered outdoors"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="work">
+        <div class="wrap section-grid">
+          <div class="section-kicker">AI in practice</div>
+          <div>
+            <h2 class="section-title">How the work gets done here.</h2>
+            <p class="section-copy">AI at Nerdy is a working system: a way to sharpen context, tighten feedback, and make decisions with better evidence. It is embedded in craft, review, measurement, and collaboration.</p>
+            <div class="practice-grid">
+              <article class="practice-item">
+                <div class="practice-num">01 / Engineering</div>
+                <h3>Build with evals, observability, and fast review loops.</h3>
+                <p>Engineers use AI to explore designs, draft tests, review changes, and investigate production signals while keeping ownership of the systems they ship.</p>
+              </article>
+              <article class="practice-item">
+                <div class="practice-num">02 / Product</div>
+                <h3>Turn product questions into prototypes and evidence.</h3>
+                <p>PMs and designers use AI to synthesize learner signal, stress-test flows, and define evaluation criteria before experiences reach learners.</p>
+              </article>
+              <article class="practice-item">
+                <div class="practice-num">03 / Sales</div>
+                <h3>Make every conversation more prepared and specific.</h3>
+                <p>Go-to-market teams use AI to understand school and family context, tailor follow-ups, and connect the right learning solution to the right need.</p>
+              </article>
+              <article class="practice-item">
+                <div class="practice-num">04 / Operations</div>
+                <h3>Keep decisions connected to live learner and team context.</h3>
+                <p>Operations teams use AI to organize knowledge, surface patterns, and coordinate support so people can make clearer, faster decisions.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section principles">
+        <div class="wrap section-grid">
+          <div class="section-kicker">How we work</div>
+          <div>
+            <h2 class="section-title">Editorial standards for a high-ownership team.</h2>
+            <div class="principle-stack">
+              <article class="principle-row">
+                <div class="principle-index">01</div>
+                <h3>Start with the learner.</h3>
+                <p>The clearest work begins with a learner problem, a signal we can observe, and a way to know whether the experience improved.</p>
+              </article>
+              <article class="principle-row">
+                <div class="principle-index">02</div>
+                <h3>Own the loop.</h3>
+                <p>Teams stay close to discovery, build, launch, support, and measurement so learning compounds instead of getting handed off.</p>
+              </article>
+              <article class="principle-row">
+                <div class="principle-index">03</div>
+                <h3>Move with taste.</h3>
+                <p>We value speed, but not noise. Strong craft, readable systems, and practical judgment are how fast work stays durable.</p>
+              </article>
+              <article class="principle-row">
+                <div class="principle-index">04</div>
+                <h3>Make the work legible.</h3>
+                <p>We write things down, show evidence, share context, and make it easy for the next person to improve what we shipped.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section roles" id="roles">
+        <div class="wrap section-grid">
+          <div class="section-kicker">Open roles</div>
+          <div>
+            <h2 class="section-title">Find your next role.</h2>
+            <p class="section-copy">Live openings load from the Paylocity Recruiting Job Feed. Use the filters to narrow the current list, or view every role on the Nerdy careers board.</p>
+            <div class="filters" id="role-filters" aria-label="Filter roles by team"></div>
+            <p class="roles-status" id="roles-status">Loading roles from Paylocity...</p>
+            <ul class="role-list" id="role-list"></ul>
+            <div class="roles-footer">
+              <span class="roles-status" id="roles-count"></span>
+              <a class="all-roles" href="https://careers.nerdy.com/jobs" target="_blank" rel="noopener">View all roles on careers.nerdy.com -&gt;</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="resources">
+        <div class="wrap section-grid">
+          <div class="section-kicker">Candidate prep</div>
+          <div>
+            <h2 class="section-title">Everything you need to prep with confidence.</h2>
+            <p class="section-copy">These existing articles are already live; the cards here simply carry the new careers design system into the landing page.</p>
+            <div class="resources-grid">
+              <a class="resource-card featured" href="/nerdy-by-nature">
+                <span class="resource-tag pill">Candidate guide</span>
+                <h3>Nerdy by Nature: a candidate's guide to our hiring process.</h3>
+                <p>Interview structure, resume tips, policies, and what to expect throughout the process.</p>
+                <span class="resource-link">Read the guide -&gt;</span>
+              </a>
+              <a class="resource-card" href="/ai-at-nerdy">
+                <span class="resource-tag pill">A note from the team</span>
+                <h3>AI at Nerdy.</h3>
+                <p>A candid look at what AI-native work means in practice across product, learning, operations, and go-to-market teams.</p>
+                <span class="resource-link">Read the article -&gt;</span>
+              </a>
+              <a class="resource-card" href="/day-in-the-life">
+                <span class="resource-tag pill">Day in the life</span>
+                <h3>A day in the life of an AI-Native Engineer.</h3>
+                <p>How engineers build, review, ship, and learn while working on the Live + AI platform.</p>
+                <span class="resource-link">Read the article -&gt;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing">
+        <div class="wrap">
+          <span class="eyebrow">Ready to build?</span>
+          <h2 class="section-title">Bring your craft to the future of learning.</h2>
+          <div class="closing-actions">
+            <a class="btn" href="#roles">See open roles</a>
+            <a class="btn secondary" href="https://www.nerdy.com/" target="_blank" rel="noopener">Learn about Nerdy</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div>
+          <a class="footer-logo" href="#top" aria-label="Nerdy Careers home">
+            <img src="assets/nerdy-wordmark-white.svg" alt="Nerdy">
+          </a>
+          <p class="footer-copy">Nerdy is the parent company of Varsity Tutors and a leading platform for live, AI-powered learning.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="https://www.nerdy.com/" target="_blank" rel="noopener">About</a>
+          <a href="https://www.varsitytutors.com/" target="_blank" rel="noopener">Varsity Tutors</a>
+          <a href="#resources">Candidate prep</a>
+          <a href="https://careers.nerdy.com/jobs" target="_blank" rel="noopener">All roles</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const QUARTERLY_STATS = {
+      period: "Q2 2026",
+      source: "Q2 2026 shareholder letter",
+      updateReminder: "Update this object each quarter when new shareholder-letter metrics are available.",
+      metrics: [
+        { value: "$43.3M", label: "Revenue" },
+        { value: "84%", label: "Consumer revenue mix" },
+        { value: "$366", label: "Average revenue per membership" },
+        { value: "64.7%", label: "Gross margin" },
+        { value: "29.1K", label: "Active memberships" }
+      ]
+    };
+
+    const PAYLOCITY_GUID = "e7a376a2-68c8-4121-812d-072b4473a1dc";
+    const PAYLOCITY_FEED_URL = "https://recruiting.paylocity.com/recruiting/v2/api/feed/jobs/" + PAYLOCITY_GUID;
+    const CAREERS_URL = "https://careers.nerdy.com/jobs";
+    const FILTERS = ["All", "Engineering", "Product", "Sales", "Operations"];
+
+    const state = {
+      jobs: [],
+      activeFilter: "All",
+      loading: true,
+      error: null
+    };
+
+    const statsGrid = document.getElementById("stats-grid");
+    const statsSource = document.getElementById("stats-source");
+    const filtersEl = document.getElementById("role-filters");
+    const rolesStatus = document.getElementById("roles-status");
+    const rolesCount = document.getElementById("roles-count");
+    const roleList = document.getElementById("role-list");
+
+    function renderStats() {
+      statsSource.textContent = QUARTERLY_STATS.period + " figures from the shareholder letter. " + QUARTERLY_STATS.updateReminder;
+      statsGrid.innerHTML = QUARTERLY_STATS.metrics.map((metric) => (
+        '<article class="metric">' +
+          '<div class="metric-value">' + escapeHtml(metric.value) + '</div>' +
+          '<div class="metric-label">' + escapeHtml(metric.label) + '</div>' +
+          '<div class="metric-note">' + escapeHtml(QUARTERLY_STATS.source) + '</div>' +
+        '</article>'
+      )).join("");
+    }
+
+    function normalizeDepartment(rawDepartment, title) {
+      const department = String(rawDepartment || "").trim();
+      const titleText = String(title || "").toLowerCase();
+      const exact = FILTERS.find((filter) => filter !== "All" && department.toLowerCase() === filter.toLowerCase());
+      if (exact) return exact;
+
+      const loose = department.toLowerCase();
+      if (loose.includes("product") || loose.includes("design") || titleText.includes("product") || titleText.includes("designer")) return "Product";
+      if (loose.includes("engineer") || loose.includes("technology") || titleText.includes("engineer") || titleText.includes("software")) return "Engineering";
+      if (loose.includes("sales") || loose.includes("revenue") || titleText.includes("sales") || titleText.includes("account executive")) return "Sales";
+      if (loose.includes("operations") || loose.includes("support") || loose.includes("customer") || titleText.includes("operations") || titleText.includes("support")) return "Operations";
+      return "Other";
+    }
+
+    function locationLabel(location) {
+      if (!location) return "Location flexible";
+      const parts = [
+        location.locationDisplayName,
+        location.name,
+        location.metro,
+        location.city && location.state ? location.city + ", " + location.state : location.city || location.state
+      ].filter(Boolean);
+      return parts[0] || "Location flexible";
+    }
+
+    function formatDate(value) {
+      if (!value) return "Recently posted";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return "Recently posted";
+      return "Posted " + date.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+    }
+
+    function normalizeJob(job) {
+      const title = job.title || job.Title || "Open role";
+      const rawDepartment = job.hiringDepartment || job.HiringDepartment || "";
+      const department = normalizeDepartment(rawDepartment, title);
+      const jobTypes = job.jobTypesArray || job.JobTypesArray || [];
+      return {
+        id: job.jobId || job.JobId || title,
+        title,
+        department,
+        rawDepartment,
+        location: locationLabel(job.jobLocation || job.JobLocation),
+        type: Array.isArray(jobTypes) && jobTypes.length ? jobTypes.join(", ") : humanizeJobType(job.jobTypes || job.JobTypes),
+        applyUrl: job.applyUrl || job.ApplyUrl || CAREERS_URL,
+        publishedDate: job.publishedDate || job.PublishedDate || job.createdUtc || job.CreatedUtc
+      };
+    }
+
+    function humanizeJobType(value) {
+      const type = String(value || "").trim();
+      if (!type) return "Open role";
+      return type
+        .replace(/fulltime/gi, "Full-time")
+        .replace(/parttime/gi, "Part-time")
+        .replace(/temporary/gi, "Temporary")
+        .split(",")
+        .map((part) => part.trim())
+        .filter(Boolean)
+        .join(", ");
+    }
+
+    function filteredJobs() {
+      if (state.activeFilter === "All") return state.jobs;
+      return state.jobs.filter((job) => job.department === state.activeFilter);
+    }
+
+    function countsByFilter() {
+      return FILTERS.reduce((counts, filter) => {
+        counts[filter] = filter === "All"
+          ? state.jobs.length
+          : state.jobs.filter((job) => job.department === filter).length;
+        return counts;
+      }, {});
+    }
+
+    function renderFilters() {
+      const counts = countsByFilter();
+      filtersEl.innerHTML = FILTERS.map((filter) => {
+        const active = state.activeFilter === filter;
+        return '<button class="pill filter-pill" type="button" data-filter="' + filter + '" aria-pressed="' + active + '">' +
+          escapeHtml(filter) + '<span class="count">' + (counts[filter] || 0) + '</span>' +
+        '</button>';
+      }).join("");
+
+      filtersEl.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.activeFilter = button.dataset.filter;
+          renderJobs();
+        });
+      });
+    }
+
+    function renderJobs() {
+      renderFilters();
+      const jobs = filteredJobs();
+      rolesStatus.textContent = state.error
+        ? "Unable to load roles from Paylocity right now. Please use the careers.nerdy.com link below."
+        : state.loading
+          ? "Loading roles from Paylocity..."
+          : "Showing " + jobs.length + " of " + state.jobs.length + " live roles.";
+      rolesCount.textContent = state.error ? "" : "Live role data via Paylocity Recruiting Job Feed.";
+
+      if (state.error) {
+        roleList.innerHTML = '<li><a class="role-row" href="' + CAREERS_URL + '" target="_blank" rel="noopener">' +
+          '<div><div class="role-title">View current openings on careers.nerdy.com</div><div class="role-meta">The embedded feed could not be loaded.</div></div>' +
+          '<div class="role-location">Careers board</div><div class="role-date">Live source</div><div class="role-arrow">-&gt;</div>' +
+        '</a></li>';
+        return;
+      }
+
+      if (state.loading) {
+        roleList.innerHTML = "";
+        return;
+      }
+
+      if (!jobs.length) {
+        roleList.innerHTML = '<li class="role-row" aria-live="polite"><div><div class="role-title">No roles in this category today.</div><div class="role-meta">Check all roles or visit the full careers board.</div></div></li>';
+        return;
+      }
+
+      roleList.innerHTML = jobs.map((job) => (
+        '<li><a class="role-row" href="' + escapeAttribute(job.applyUrl) + '" target="_blank" rel="noopener">' +
+          '<div>' +
+            '<div class="role-title">' + escapeHtml(job.title) + '</div>' +
+            '<div class="role-meta">' + escapeHtml(job.department === "Other" ? (job.rawDepartment || "Team to be confirmed") : job.department) + ' / ' + escapeHtml(job.type) + '</div>' +
+          '</div>' +
+          '<div class="role-location">' + escapeHtml(job.location) + '</div>' +
+          '<div class="role-date">' + escapeHtml(formatDate(job.publishedDate)) + '</div>' +
+          '<div class="role-arrow" aria-hidden="true">-&gt;</div>' +
+        '</a></li>'
+      )).join("");
+    }
+
+    async function loadJobs() {
+      renderJobs();
+      try {
+        const response = await fetch(PAYLOCITY_FEED_URL, { headers: { Accept: "application/json" } });
+        if (!response.ok) throw new Error("Paylocity request failed: " + response.status);
+        const data = await response.json();
+        const jobs = Array.isArray(data) ? data : (data.jobs || data.Jobs || []);
+        state.jobs = jobs.map(normalizeJob).sort((a, b) => new Date(b.publishedDate || 0) - new Date(a.publishedDate || 0));
+        state.error = null;
+      } catch (error) {
+        console.error(error);
+        state.error = error;
+      } finally {
+        state.loading = false;
+        renderJobs();
+      }
+    }
+
+    function escapeHtml(value) {
+      return String(value == null ? "" : value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function escapeAttribute(value) {
+      return escapeHtml(value).replace(/`/g, "&#096;");
+    }
+
+    renderStats();
+    loadJobs();
+  </script>
+</body>
+</html>
