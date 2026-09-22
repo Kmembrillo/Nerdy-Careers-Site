@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Careers at Nerdy: build the Live + AI learning platform with an AI-native team.">
+  <meta name="description" content="Careers at Nerdy: build the Live + AI platform transforming how people learn.">
   <title>Nerdy Careers</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..800,20..100,0..1&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
-
     :root {
       --cream: #F3EEE5;
       --cream-deep: #ECE4D4;
@@ -22,26 +21,18 @@
       --brass: #8C6A45;
       --hairline: #DCD2BC;
       --paper: #FBF8F2;
-      --paper-soft: rgba(251, 248, 242, 0.74);
-      --focus: #6A4B2B;
       --font-display: "Fraunces", Georgia, serif;
       --font-ui: "Schibsted Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --frame-gap: clamp(12px, 2vw, 24px);
       --page-pad: clamp(20px, 5vw, 72px);
-      --section-y: clamp(76px, 11vw, 148px);
+      --section-y: clamp(76px, 11vw, 144px);
       --max: 1240px;
+      --gradient: linear-gradient(105deg, #8C6A45 0%, #D09B5D 38%, #33496a 100%);
     }
-
-    html {
-      scroll-behavior: smooth;
-      background: var(--cream-deep);
-    }
-
+    html { scroll-behavior: smooth; background: var(--cream-deep); }
     body {
       margin: 0;
-      background:
-        radial-gradient(circle at 16% 6%, rgba(140, 106, 69, 0.16), transparent 28rem),
-        linear-gradient(180deg, var(--cream-deep), var(--cream));
+      background: linear-gradient(180deg, var(--cream-deep), var(--cream));
       color: var(--ink);
       font-family: var(--font-ui);
       font-size: 16px;
@@ -49,823 +40,181 @@
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
-
     body::before {
       content: "";
       position: fixed;
       inset: var(--frame-gap);
       border: 1px solid var(--hairline);
       pointer-events: none;
-      z-index: 30;
+      z-index: 40;
     }
-
     a { color: inherit; }
-    img { max-width: 100%; display: block; }
-    button, input, textarea { font: inherit; }
-
-    :focus-visible {
-      outline: 3px solid rgba(140, 106, 69, 0.52);
-      outline-offset: 4px;
-    }
-
-    .site-canvas {
-      min-height: calc(100vh - (var(--frame-gap) * 2));
-      margin: var(--frame-gap);
-      background: var(--cream);
-      border: 1px solid var(--hairline);
-    }
-
-    .wrap {
-      width: min(var(--max), calc(100% - (var(--page-pad) * 2)));
-      margin-inline: auto;
-    }
-
-    .site-header {
-      position: sticky;
-      top: var(--frame-gap);
-      z-index: 20;
-      background: rgba(243, 238, 229, 0.88);
-      border-bottom: 1px solid var(--hairline);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-
-    .nav {
-      min-height: 84px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-    }
-
-    .logo-lockup {
-      display: inline-flex;
-      align-items: center;
-      gap: 18px;
-      text-decoration: none;
-      min-width: 0;
-    }
-
-    .logo-wordmark img {
-      width: 132px;
-      height: auto;
-      filter: brightness(0) saturate(100%) invert(11%) sepia(14%) saturate(537%) hue-rotate(356deg) brightness(94%) contrast(92%);
-    }
-
-    .logo-divider {
-      width: 1px;
-      height: 34px;
-      background: var(--hairline);
-    }
-
-    .logo-subline {
-      font-family: var(--font-display);
-      font-size: clamp(24px, 3vw, 38px);
-      font-weight: 520;
-      letter-spacing: -0.04em;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: clamp(14px, 2vw, 28px);
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--ink-soft);
-      font-size: 0.88rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      text-decoration: none;
-      transition: color 160ms ease;
-    }
-
+    img { display: block; max-width: 100%; }
+    button, textarea { font: inherit; }
+    :focus-visible { outline: 3px solid rgba(140, 106, 69, 0.56); outline-offset: 4px; }
+    .site-canvas { min-height: calc(100vh - (var(--frame-gap) * 2)); margin: var(--frame-gap); background: var(--cream); border: 1px solid var(--hairline); }
+    .wrap { width: min(var(--max), calc(100% - (var(--page-pad) * 2))); margin-inline: auto; }
+    .site-header { position: sticky; top: var(--frame-gap); z-index: 30; background: rgba(243,238,229,0.9); border-bottom: 1px solid var(--hairline); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+    .nav { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .logo-lockup { display: inline-flex; align-items: center; gap: 18px; text-decoration: none; min-width: 0; }
+    .logo-wordmark img { width: 132px; height: auto; filter: brightness(0) saturate(100%) invert(11%) sepia(14%) saturate(537%) hue-rotate(356deg) brightness(94%) contrast(92%); }
+    .logo-divider { width: 1px; height: 34px; background: var(--hairline); }
+    .logo-subline { font-family: var(--font-display); font-size: clamp(24px, 3vw, 38px); font-weight: 540; letter-spacing: -0.04em; white-space: nowrap; }
+    .nav-links { display: flex; align-items: center; gap: clamp(13px, 1.8vw, 26px); margin: 0; padding: 0; list-style: none; }
+    .nav-links a { color: var(--ink-soft); font-size: 0.87rem; font-weight: 700; text-decoration: none; transition: color 160ms ease; }
     .nav-links a:hover { color: var(--ink); }
-
-    .btn,
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      border-radius: 999px;
-    }
-
-    .btn {
-      min-height: 48px;
-      padding: 12px 22px;
-      border: 1px solid var(--navy);
-      background: var(--navy);
-      color: var(--paper);
-      font-size: 0.94rem;
-      font-weight: 800;
-      letter-spacing: 0.01em;
-      text-decoration: none;
-      transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
-    }
-
-    .btn:hover {
-      background: var(--navy-hover);
-      border-color: var(--navy-hover);
-      transform: translateY(-1px);
-    }
-
-    .btn.secondary {
-      background: transparent;
-      color: var(--ink);
-      border-color: var(--hairline);
-    }
-
-    .btn.secondary:hover {
-      background: var(--paper-soft);
-      border-color: var(--brass);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--brass);
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--brass);
-    }
-
-    .hero {
-      padding: clamp(76px, 11vw, 142px) 0 clamp(72px, 9vw, 116px);
-      border-bottom: 1px solid var(--hairline);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.72fr);
-      gap: clamp(42px, 7vw, 96px);
-      align-items: end;
-    }
-
-    .hero-copy {
-      max-width: 850px;
-    }
-
-    h1, h2, h3, p { margin-block-start: 0; }
-
-    h1,
-    .section-title,
-    .metric-value,
-    .photo-callout,
-    .quote {
-      font-family: var(--font-display);
-      font-variation-settings: "SOFT" 72, "WONK" 1;
-    }
-
-    h1 {
-      margin: 28px 0 26px;
-      font-size: clamp(54px, 8.4vw, 124px);
-      line-height: 0.9;
-      letter-spacing: -0.07em;
-      font-weight: 620;
-      max-width: 920px;
-    }
-
-    .display-italic {
-      color: var(--brass);
-      font-style: italic;
-      font-weight: 520;
-    }
-
-    .hero-lede {
-      max-width: 650px;
-      color: var(--ink-soft);
-      font-size: clamp(1.08rem, 1.6vw, 1.32rem);
-      line-height: 1.58;
-      margin-bottom: 36px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
-    }
-
-    .hero-panel {
-      border-left: 1px solid var(--hairline);
-      padding-left: clamp(26px, 4vw, 46px);
-    }
-
-    .hero-panel-photo {
-      border-radius: 999px 999px 22px 22px;
-      overflow: hidden;
-      aspect-ratio: 4 / 5;
-      background: var(--paper);
-      border: 1px solid var(--hairline);
-    }
-
-    .hero-panel-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .hero-caption {
-      margin: 22px 0 0;
-      color: var(--ink-soft);
-      font-size: 0.95rem;
-    }
-
-    .hero-caption strong {
-      display: block;
-      color: var(--ink);
-      font-weight: 800;
-      margin-bottom: 4px;
-    }
-
-    .marquee {
-      overflow: hidden;
-      border-bottom: 1px solid var(--hairline);
-      background: var(--paper);
-    }
-
-    .marquee-track {
-      display: flex;
-      width: max-content;
-      gap: 36px;
-      padding: 18px 0;
-      animation: marquee 38s linear infinite;
-    }
-
-    .marquee span {
-      color: var(--ink-soft);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .marquee span::after {
-      content: "/";
-      color: var(--brass);
-      margin-left: 36px;
-    }
-
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    .section {
-      padding: var(--section-y) 0;
-      border-bottom: 1px solid var(--hairline);
-    }
-
-    .section-grid {
-      display: grid;
-      grid-template-columns: minmax(170px, 0.28fr) minmax(0, 1fr);
-      gap: clamp(32px, 6vw, 96px);
-      align-items: start;
-    }
-
-    .section-kicker {
-      color: var(--brass);
-      border-top: 1px solid var(--brass);
-      padding-top: 16px;
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.17em;
-      line-height: 1.35;
-      text-transform: uppercase;
-    }
-
-    .section-title {
-      margin: 0;
-      font-size: clamp(38px, 5vw, 76px);
-      line-height: 0.98;
-      letter-spacing: -0.06em;
-      font-weight: 620;
-      max-width: 920px;
-    }
-
-    .section-copy {
-      max-width: 720px;
-      margin-top: 24px;
-      color: var(--ink-soft);
-      font-size: clamp(1rem, 1.35vw, 1.16rem);
-    }
-
-    .mission-proof {
-      display: grid;
-      grid-template-columns: minmax(0, 0.85fr) minmax(280px, 0.5fr);
-      gap: clamp(26px, 5vw, 64px);
-      margin-top: clamp(44px, 7vw, 84px);
-      align-items: stretch;
-    }
-
-    .quote {
-      margin: 0;
-      padding: clamp(28px, 4vw, 46px) 0 0;
-      border-top: 1px solid var(--hairline);
-      font-size: clamp(28px, 3.4vw, 48px);
-      line-height: 1.06;
-      letter-spacing: -0.045em;
-      font-weight: 520;
-    }
-
-    .quote cite {
-      display: block;
-      margin-top: 24px;
-      color: var(--ink-soft);
-      font-family: var(--font-ui);
-      font-size: 0.95rem;
-      font-style: normal;
-      letter-spacing: 0;
-    }
-
-    .proof-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      border-top: 1px solid var(--hairline);
-    }
-
-    .proof-list li {
-      padding: 22px 0;
-      border-bottom: 1px solid var(--hairline);
-      color: var(--ink-soft);
-    }
-
-    .proof-list strong {
-      display: block;
-      color: var(--ink);
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      margin-bottom: 6px;
-      text-transform: uppercase;
-    }
-
-    .stats {
-      background: var(--navy);
-      color: var(--paper);
-    }
-
-    .stats .section-kicker {
-      color: rgba(251, 248, 242, 0.72);
-      border-color: rgba(251, 248, 242, 0.28);
-    }
-
-    .stats-intro {
-      color: rgba(251, 248, 242, 0.76);
-      max-width: 680px;
-      margin: 0 0 46px;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      border-top: 1px solid rgba(251, 248, 242, 0.24);
-      border-left: 1px solid rgba(251, 248, 242, 0.24);
-    }
-
-    .metric {
-      min-height: 190px;
-      padding: clamp(22px, 3vw, 34px);
-      border-right: 1px solid rgba(251, 248, 242, 0.24);
-      border-bottom: 1px solid rgba(251, 248, 242, 0.24);
-    }
-
-    .metric-value {
-      font-size: clamp(38px, 5vw, 64px);
-      line-height: 0.95;
-      letter-spacing: -0.055em;
-      font-weight: 650;
-    }
-
-    .metric-label {
-      margin-top: 16px;
-      color: rgba(251, 248, 242, 0.72);
-      font-size: 0.92rem;
-    }
-
-    .metric-note {
-      margin-top: 30px;
-      color: rgba(251, 248, 242, 0.56);
-      font-size: 0.8rem;
-    }
-
-    .photo-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-      grid-template-rows: 260px 260px;
-      gap: 18px;
-      margin-top: clamp(42px, 7vw, 84px);
-    }
-
-    .team-photo {
-      border-radius: 30px;
-      overflow: hidden;
-      border: 1px solid var(--hairline);
-      background: var(--paper);
-    }
-
-    .team-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .team-photo.large { grid-row: span 2; }
-
-    .photo-callout {
-      border-top: 1px solid var(--hairline);
-      padding-top: 26px;
-      font-size: clamp(28px, 4vw, 54px);
-      line-height: 1;
-      letter-spacing: -0.055em;
-      font-weight: 600;
-    }
-
-    .practice-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      border-top: 1px solid var(--hairline);
-      border-left: 1px solid var(--hairline);
-      margin-top: clamp(42px, 7vw, 78px);
-    }
-
-    .practice-item {
-      min-height: 280px;
-      padding: clamp(26px, 4vw, 42px);
-      border-right: 1px solid var(--hairline);
-      border-bottom: 1px solid var(--hairline);
-      background: rgba(251, 248, 242, 0.36);
-    }
-
-    .practice-item:nth-child(2),
-    .practice-item:nth-child(3) {
-      background: transparent;
-    }
-
-    .practice-num {
-      color: var(--brass);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-
-    .practice-item h3,
-    .resource-card h3,
-    .role-title {
-      font-family: var(--font-display);
-      font-variation-settings: "SOFT" 64, "WONK" 1;
-      font-weight: 560;
-      letter-spacing: -0.04em;
-    }
-
-    .practice-item h3 {
-      margin: 0 0 14px;
-      font-size: clamp(28px, 3vw, 42px);
-      line-height: 1.03;
-    }
-
-    .practice-item p {
-      margin: 0;
-      color: var(--ink-soft);
-      max-width: 520px;
-    }
-
-    .principles {
-      background: var(--paper);
-    }
-
-    .principle-stack {
-      margin-top: clamp(42px, 7vw, 76px);
-      border-top: 1px solid var(--hairline);
-    }
-
-    .principle-row {
-      display: grid;
-      grid-template-columns: 96px minmax(0, 0.78fr) minmax(0, 0.78fr);
-      gap: clamp(20px, 4vw, 58px);
-      padding: clamp(30px, 5vw, 52px) 0;
-      border-bottom: 1px solid var(--hairline);
-    }
-
-    .principle-index {
-      color: var(--brass);
-      font-family: var(--font-display);
-      font-size: clamp(34px, 4vw, 58px);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-    }
-
-    .principle-row h3 {
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: clamp(26px, 3.2vw, 44px);
-      line-height: 1.02;
-      letter-spacing: -0.045em;
-      font-weight: 560;
-    }
-
-    .principle-row p {
-      margin: 0;
-      color: var(--ink-soft);
-    }
-
-    .roles {
-      background: var(--ink);
-      color: var(--paper);
-    }
-
-    .roles .section-kicker {
-      color: rgba(251, 248, 242, 0.68);
-      border-color: rgba(251, 248, 242, 0.26);
-    }
-
-    .roles .section-copy {
-      color: rgba(251, 248, 242, 0.72);
-    }
-
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: clamp(36px, 5vw, 56px) 0 26px;
-    }
-
-    .filter-pill {
-      border: 1px solid rgba(251, 248, 242, 0.28);
-      background: transparent;
-      color: rgba(251, 248, 242, 0.78);
-      cursor: pointer;
-      font-size: 0.88rem;
-      font-weight: 800;
-      padding: 10px 16px;
-      transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
-    }
-
-    .filter-pill:hover,
-    .filter-pill[aria-pressed="true"] {
-      background: var(--paper);
-      border-color: var(--paper);
-      color: var(--ink);
-    }
-
-    .filter-pill .count {
-      margin-left: 8px;
-      opacity: 0.62;
-      font-size: 0.75rem;
-    }
-
-    .roles-status {
-      min-height: 24px;
-      color: rgba(251, 248, 242, 0.68);
-      font-size: 0.9rem;
-      margin-bottom: 6px;
-    }
-
-    .role-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      border-top: 1px solid rgba(251, 248, 242, 0.18);
-    }
-
-    .role-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(160px, 0.36fr) minmax(160px, 0.36fr) auto;
-      gap: clamp(18px, 3vw, 42px);
-      align-items: center;
-      padding: 28px 0;
-      border-bottom: 1px solid rgba(251, 248, 242, 0.18);
-      color: inherit;
-      text-decoration: none;
-      transition: padding 160ms ease, color 160ms ease;
-    }
-
-    .role-row:hover {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-
-    .role-title {
-      font-size: clamp(24px, 2.7vw, 38px);
-      line-height: 1.02;
-      margin-bottom: 8px;
-    }
-
-    .role-meta,
-    .role-location,
-    .role-date {
-      color: rgba(251, 248, 242, 0.62);
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .role-location,
-    .role-date {
-      color: rgba(251, 248, 242, 0.78);
-    }
-
-    .role-arrow {
-      font-size: 1.35rem;
-      color: var(--paper);
-    }
-
-    .roles-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      margin-top: 34px;
-      flex-wrap: wrap;
-    }
-
-    .all-roles {
-      color: var(--paper);
-      font-weight: 800;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(251, 248, 242, 0.6);
-    }
-
-    .resources-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr 1fr;
-      border-top: 1px solid var(--hairline);
-      border-left: 1px solid var(--hairline);
-      margin-top: clamp(42px, 7vw, 76px);
-    }
-
-    .resource-card {
-      min-height: 360px;
-      display: flex;
-      flex-direction: column;
-      padding: clamp(26px, 4vw, 40px);
-      border-right: 1px solid var(--hairline);
-      border-bottom: 1px solid var(--hairline);
-      background: var(--paper-soft);
-      text-decoration: none;
-      transition: background 160ms ease;
-    }
-
-    .resource-card:hover {
-      background: var(--paper);
-    }
-
-    .resource-card.featured {
-      background: var(--navy);
-      color: var(--paper);
-    }
-
-    .resource-tag {
-      align-self: flex-start;
-      margin-bottom: 26px;
-      border: 1px solid currentColor;
-      color: var(--brass);
-      padding: 7px 12px;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .resource-card.featured .resource-tag {
-      color: rgba(251, 248, 242, 0.78);
-    }
-
-    .resource-card h3 {
-      margin: 0;
-      font-size: clamp(28px, 3vw, 44px);
-      line-height: 1.02;
-    }
-
-    .resource-card p {
-      margin: 18px 0 0;
-      color: var(--ink-soft);
-    }
-
-    .resource-card.featured p {
-      color: rgba(251, 248, 242, 0.72);
-    }
-
-    .resource-link {
-      margin-top: auto;
-      padding-top: 36px;
-      font-weight: 800;
-    }
-
-    .closing {
-      padding: clamp(84px, 13vw, 164px) 0;
-      text-align: left;
-    }
-
-    .closing .section-title {
-      max-width: 880px;
-    }
-
-    .closing-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 34px;
-    }
-
-    .site-footer {
-      background: var(--navy);
-      color: var(--paper);
-      padding: 52px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 28px;
-      flex-wrap: wrap;
-    }
-
-    .footer-logo img {
-      width: 116px;
-      height: auto;
-      margin-bottom: 18px;
-      filter: none;
-    }
-
-    .footer-copy {
-      max-width: 420px;
-      color: rgba(251, 248, 242, 0.7);
-      margin: 0;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      color: rgba(251, 248, 242, 0.76);
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    .footer-links a {
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-    }
-
-    .footer-links a:hover {
-      border-color: currentColor;
-    }
+    .btn, .pill { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 999px; }
+    .btn { min-height: 48px; padding: 12px 22px; border: 1px solid var(--navy); background: var(--navy); color: var(--paper); font-size: 0.94rem; font-weight: 800; text-decoration: none; cursor: pointer; transition: background 160ms ease, border-color 160ms ease, transform 160ms ease; }
+    .btn:hover { background: var(--navy-hover); border-color: var(--navy-hover); transform: translateY(-1px); }
+    .btn.secondary { background: transparent; color: var(--ink); border-color: var(--hairline); }
+    .btn.secondary:hover { background: var(--paper); border-color: var(--brass); }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--brass); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 999px; background: var(--brass); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, .section-title, .metric-value, .quote-card blockquote { font-family: var(--font-display); font-variation-settings: "SOFT" 72, "WONK" 1; }
+    .gradient-text { background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+
+    .hero { padding: clamp(76px, 10vw, 132px) 0 clamp(68px, 8vw, 108px); border-bottom: 1px solid var(--hairline); overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr); gap: clamp(42px, 7vw, 90px); align-items: center; }
+    .hero h1 { margin: 28px 0 28px; font-size: clamp(48px, 7.3vw, 104px); line-height: 0.94; letter-spacing: -0.07em; font-weight: 650; max-width: 950px; }
+    .hero-lede { max-width: 710px; color: var(--ink-soft); font-size: clamp(1.08rem, 1.4vw, 1.28rem); line-height: 1.58; margin-bottom: 36px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .liveai-stage { position: relative; width: 100%; max-width: 560px; aspect-ratio: 1 / 1; margin-left: auto; background: radial-gradient(circle at 30% 20%, rgba(140,106,69,0.18), transparent 46%), linear-gradient(180deg, #223349 0%, #172335 100%); border: 1px solid rgba(251,248,242,0.22); border-radius: 28px; overflow: hidden; box-shadow: 0 28px 70px rgba(35,32,27,0.18); }
+    .liveai-stage svg { width: 100%; height: 100%; display: block; }
+    .node-card { fill: rgba(251,248,242,0.06); stroke: rgba(251,248,242,0.18); stroke-width: 1; }
+    .node-kicker { fill: rgba(251,248,242,0.55); font-family: var(--font-ui); font-size: 10px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
+    .node-label { fill: var(--paper); font-family: var(--font-display); font-size: 18px; font-weight: 620; }
+    .node-meta { fill: rgba(251,248,242,0.66); font-family: var(--font-ui); font-size: 11px; font-weight: 600; }
+    .conn-path { fill: none; stroke: rgba(251,248,242,0.14); stroke-width: 1.4; }
+    .ai-pulse-ring { fill: none; stroke: #D09B5D; stroke-width: 1.2; opacity: 0.55; animation: aiPulse 3s ease-out infinite; transform-origin: 280px 280px; }
+    .ai-pulse-ring.r2 { animation-delay: 1s; }
+    .ai-pulse-ring.r3 { animation-delay: 2s; }
+    @keyframes aiPulse { from { transform: scale(0.65); opacity: 0.55; } to { transform: scale(1.58); opacity: 0; } }
+    .token { font-family: var(--font-ui); font-size: 10px; font-weight: 800; fill: var(--paper); }
+
+    .section { padding: var(--section-y) 0; border-bottom: 1px solid var(--hairline); }
+    .section-grid { display: grid; grid-template-columns: minmax(170px, 0.28fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+    .section-kicker { color: var(--brass); border-top: 1px solid var(--brass); padding-top: 16px; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.17em; line-height: 1.35; text-transform: uppercase; }
+    .section-title { margin: 0; font-size: clamp(38px, 5vw, 76px); line-height: 0.98; letter-spacing: -0.06em; font-weight: 650; max-width: 940px; }
+    .section-copy { max-width: 760px; margin-top: 24px; color: var(--ink-soft); font-size: clamp(1rem, 1.35vw, 1.16rem); }
+
+    .stats { background: var(--paper); }
+    .stats-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--hairline); border-left: 1px solid var(--hairline); }
+    .metric { min-height: 190px; padding: clamp(20px, 2.5vw, 30px); border-right: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); background: rgba(243,238,229,0.45); overflow: hidden; }
+    .metric-value { font-size: clamp(34px, 3.2vw, 48px); line-height: 0.95; letter-spacing: -0.04em; font-weight: 700; white-space: nowrap; }
+    .metric-label { margin-top: 16px; color: var(--ink-soft); font-size: 0.94rem; }
+
+    .mission { background: var(--cream); }
+    .quote-card { margin-top: clamp(38px, 6vw, 70px); background: var(--paper); border: 1px solid var(--hairline); padding: clamp(30px, 5vw, 54px); display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 24px; max-width: 920px; }
+    .quote-mark { font-family: var(--font-display); font-size: 76px; line-height: 0.75; color: var(--brass); }
+    .quote-card blockquote { margin: 0 0 22px; font-size: clamp(26px, 3vw, 42px); line-height: 1.1; letter-spacing: -0.04em; font-weight: 520; }
+    .quote-card cite { color: var(--ink); font-style: normal; font-weight: 800; }
+    .quote-card cite span { display: block; margin-top: 2px; color: var(--ink-soft); font-weight: 500; }
+
+    .dark-section { background: var(--navy); color: var(--paper); }
+    .dark-section .section-kicker { color: rgba(251,248,242,0.68); border-color: rgba(251,248,242,0.28); }
+    .dark-section .section-copy { color: rgba(251,248,242,0.72); }
+    .dark-section .section-title { color: var(--paper); }
+    .principles-stack { margin-top: clamp(42px, 7vw, 78px); border-top: 1px solid rgba(251,248,242,0.18); }
+    .principle-row { display: grid; grid-template-columns: 110px minmax(0, 1.1fr) minmax(0, 0.9fr); gap: clamp(22px, 4vw, 56px); padding: clamp(32px, 5vw, 52px) 0; border-bottom: 1px solid rgba(251,248,242,0.18); }
+    .principle-num { font-family: var(--font-display); font-size: clamp(40px, 5vw, 72px); line-height: 0.9; letter-spacing: -0.05em; color: #D09B5D; }
+    .principle-headline { margin: 0; font-family: var(--font-display); font-size: clamp(28px, 3vw, 44px); line-height: 1.04; letter-spacing: -0.045em; font-weight: 620; }
+    .principle-headline em { color: #D09B5D; font-style: italic; }
+    .principle-detail { margin: 0; color: rgba(251,248,242,0.72); }
+
+    .ai-card-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; margin-top: clamp(42px, 7vw, 78px); }
+    .practice-card { grid-column: span 4; min-height: 330px; display: flex; flex-direction: column; padding: clamp(24px, 3vw, 34px); background: var(--paper); border: 1px solid var(--hairline); color: var(--ink); text-decoration: none; position: relative; overflow: hidden; }
+    .practice-card.span-5 { grid-column: span 5; }
+    .practice-card.span-4 { grid-column: span 4; }
+    .practice-card.span-3 { grid-column: span 3; }
+    .practice-card.dark-card { background: var(--navy); color: var(--paper); border-color: var(--navy); }
+    .practice-card.dark-card::before { content: ""; position: absolute; right: -110px; bottom: -120px; width: 300px; height: 300px; border-radius: 50%; background: var(--gradient); filter: blur(70px); opacity: 0.35; }
+    .practice-card > * { position: relative; }
+    .practice-label { color: var(--brass); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 22px; }
+    .practice-card.dark-card .practice-label { color: rgba(251,248,242,0.62); }
+    .teal-label { color: #C9D8C0 !important; }
+    .practice-card h3 { margin: 0 0 18px; font-family: var(--font-display); font-size: clamp(25px, 2.6vw, 38px); line-height: 1.05; letter-spacing: -0.045em; font-weight: 620; }
+    .practice-card ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; color: var(--ink-soft); }
+    .practice-card.dark-card ul { color: rgba(251,248,242,0.72); }
+    .practice-card li { display: flex; gap: 10px; }
+    .practice-card li::before { content: ""; width: 6px; height: 6px; border-radius: 999px; background: var(--brass); flex: 0 0 auto; margin-top: 10px; }
+    .practice-stat { margin: auto 0 0; padding-top: 18px; border-top: 1px dashed var(--hairline); color: var(--ink-soft); font-weight: 800; }
+    .practice-card.dark-card .practice-stat { color: rgba(251,248,242,0.74); border-color: rgba(251,248,242,0.2); }
+    .text-link { margin-top: auto; font-weight: 900; }
+
+    .hubs-strip { background: var(--navy); color: var(--paper); padding: 28px 0; overflow: hidden; border-bottom: 1px solid rgba(251,248,242,0.08); position: relative; }
+    .hubs-track { display: flex; width: max-content; gap: 40px; animation: hubsScroll 48s linear infinite; }
+    .hub-pill { display: inline-flex; align-items: center; gap: 10px; color: rgba(251,248,242,0.86); font-weight: 700; white-space: nowrap; }
+    .hub-dot { width: 6px; height: 6px; border-radius: 999px; background: #D09B5D; }
+    @keyframes hubsScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    .team-photo-section { background: var(--cream); }
+    .team-photo-frame { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: clamp(42px, 7vw, 78px); }
+    .team-photo-tile { border-radius: 30px; overflow: hidden; border: 1px solid var(--hairline); background: var(--paper); }
+    .team-photo-tile.tile-main { grid-column: span 3; aspect-ratio: 1200 / 502; }
+    .team-photo-tile.tile-side { aspect-ratio: 4 / 3; }
+    .team-photo-tile img { width: 100%; height: 100%; object-fit: cover; }
+
+    .roles { background: var(--ink); color: var(--paper); }
+    .roles .section-kicker { color: rgba(251,248,242,0.68); border-color: rgba(251,248,242,0.28); }
+    .roles .section-copy { color: rgba(251,248,242,0.72); }
+    .filters { display: flex; flex-wrap: wrap; gap: 10px; margin: clamp(36px, 5vw, 56px) 0 26px; }
+    .filter-pill { border: 1px solid rgba(251,248,242,0.28); background: transparent; color: rgba(251,248,242,0.78); cursor: pointer; font-size: 0.88rem; font-weight: 800; padding: 10px 16px; }
+    .filter-pill:hover, .filter-pill[aria-pressed="true"] { background: var(--paper); border-color: var(--paper); color: var(--ink); }
+    .filter-pill .count { margin-left: 8px; opacity: 0.62; font-size: 0.75rem; }
+    .roles-status { min-height: 24px; color: rgba(251,248,242,0.68); font-size: 0.9rem; margin-bottom: 6px; }
+    .role-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid rgba(251,248,242,0.18); }
+    .role-row { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(160px, 0.36fr) minmax(160px, 0.36fr) auto; gap: clamp(18px, 3vw, 42px); align-items: center; padding: 28px 0; border-bottom: 1px solid rgba(251,248,242,0.18); color: inherit; text-decoration: none; }
+    .role-row:hover { padding-left: 10px; padding-right: 10px; }
+    .role-title { font-family: var(--font-display); font-size: clamp(24px, 2.7vw, 38px); line-height: 1.02; letter-spacing: -0.04em; font-weight: 620; margin-bottom: 8px; }
+    .role-meta, .role-location, .role-date { color: rgba(251,248,242,0.68); font-size: 0.9rem; font-weight: 600; }
+    .role-arrow { color: var(--paper); font-size: 1.35rem; }
+    .roles-footer { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin-top: 34px; flex-wrap: wrap; }
+    .all-roles { color: var(--paper); font-weight: 800; text-decoration: none; border-bottom: 1px solid rgba(251,248,242,0.6); }
+
+    .resources-grid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; border-top: 1px solid var(--hairline); border-left: 1px solid var(--hairline); margin-top: clamp(42px, 7vw, 76px); }
+    .resource-card { min-height: 350px; display: flex; flex-direction: column; padding: clamp(26px, 4vw, 40px); border-right: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); background: var(--paper); text-decoration: none; }
+    .resource-card.featured { background: var(--navy); color: var(--paper); }
+    .resource-tag { align-self: flex-start; margin-bottom: 26px; border: 1px solid currentColor; color: var(--brass); padding: 7px 12px; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+    .resource-card.featured .resource-tag { color: rgba(251,248,242,0.78); }
+    .resource-card h3 { margin: 0; font-family: var(--font-display); font-size: clamp(28px, 3vw, 44px); line-height: 1.02; letter-spacing: -0.04em; font-weight: 620; }
+    .resource-card p { margin: 18px 0 0; color: var(--ink-soft); }
+    .resource-card.featured p { color: rgba(251,248,242,0.72); }
+    .resource-link { margin-top: auto; padding-top: 36px; font-weight: 800; }
+
+    .bench { position: relative; overflow: hidden; text-align: center; }
+    .bench::before { content: ""; position: absolute; inset: 12% 8%; background: var(--gradient); filter: blur(120px); opacity: 0.14; pointer-events: none; }
+    .bench .wrap { position: relative; }
+    .bench .section-title { margin-inline: auto; }
+    .bench-copy { max-width: 720px; margin: 24px auto 36px; color: var(--ink-soft); }
+    .bench-form, .bench-success { max-width: 720px; margin: 0 auto; background: var(--paper); border: 1px solid var(--hairline); text-align: left; }
+    .bench-form textarea { width: 100%; min-height: 150px; resize: vertical; border: 0; border-bottom: 1px solid var(--hairline); background: transparent; padding: 22px; color: var(--ink); outline: none; }
+    .bench-form-bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding: 14px 16px 14px 22px; }
+    .bench-hint { color: var(--ink-muted); font-size: 0.86rem; font-weight: 700; }
+    .bench-success { padding: 32px; text-align: center; }
+    .bench-success h3 { margin: 0; font-family: var(--font-display); font-size: 34px; letter-spacing: -0.04em; }
+    .form-error { color: #8a2e21; margin: 0 22px 18px; font-weight: 700; }
+
+    .site-footer { background: var(--navy); color: var(--paper); padding: 56px 0 40px; }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-logo img { width: 116px; height: auto; margin-bottom: 18px; filter: none; }
+    .footer-copy { max-width: 360px; color: rgba(251,248,242,0.7); margin: 0; }
+    .footer-col h5 { margin: 0 0 16px; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+    .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col a { color: rgba(251,248,242,0.72); text-decoration: none; }
+    .footer-col a:hover { color: var(--paper); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(251,248,242,0.18); color: rgba(251,248,242,0.62); }
+    .ticker { color: var(--paper); border: 1px solid rgba(251,248,242,0.28); border-radius: 999px; padding: 5px 11px; font-weight: 800; }
 
     @media (max-width: 1040px) {
       .nav-links { display: none; }
-      .hero-grid,
-      .mission-proof,
-      .photo-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-panel {
-        border-left: 0;
-        padding-left: 0;
-        max-width: 520px;
-      }
-
-      .photo-grid {
-        grid-template-rows: none;
-      }
-
-      .team-photo,
-      .team-photo.large {
-        min-height: 280px;
-        grid-row: auto;
-      }
-
-      .stats-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .practice-grid,
-      .resources-grid {
-        grid-template-columns: 1fr;
-      }
+      .hero-grid, .section-grid { grid-template-columns: 1fr; }
+      .liveai-stage { margin: 0; }
+      .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .ai-card-grid, .resources-grid, .footer-inner { grid-template-columns: 1fr; }
+      .practice-card, .practice-card.span-5, .practice-card.span-4, .practice-card.span-3 { grid-column: auto; }
+      .principle-row { grid-template-columns: 1fr; }
     }
-
     @media (max-width: 760px) {
       body::before { inset: 8px; }
       .site-canvas { margin: 8px; }
@@ -873,41 +222,18 @@
       .wrap { width: min(var(--max), calc(100% - 40px)); }
       .nav { min-height: 74px; }
       .logo-wordmark img { width: 100px; }
-      .logo-divider { height: 28px; }
       .logo-subline { font-size: 24px; }
-      h1 { font-size: clamp(50px, 17vw, 74px); }
-      .section-grid,
-      .principle-row,
-      .role-row {
-        grid-template-columns: 1fr;
-      }
-
-      .section-kicker {
-        max-width: 220px;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .role-row:hover {
-        padding-left: 0;
-        padding-right: 0;
-      }
-
-      .role-arrow {
-        display: none;
-      }
+      .logo-divider { height: 28px; }
+      h1 { font-size: clamp(44px, 14vw, 72px); }
+      .stats-grid, .team-photo-frame, .role-row { grid-template-columns: 1fr; }
+      .team-photo-tile.tile-main { grid-column: auto; aspect-ratio: 16 / 10; }
+      .role-row:hover { padding-left: 0; padding-right: 0; }
+      .role-arrow { display: none; }
+      .quote-card { grid-template-columns: 1fr; }
     }
-
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-      }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
     }
   </style>
 </head>
@@ -921,10 +247,11 @@
           <span class="logo-subline">Careers</span>
         </a>
         <ul class="nav-links">
-          <li><a href="#mission">Mission</a></li>
-          <li><a href="#work">AI in practice</a></li>
+          <li><a href="#mission">Our mission</a></li>
+          <li><a href="#how">How we work</a></li>
           <li><a href="#roles">Open roles</a></li>
           <li><a href="#resources">Candidate prep</a></li>
+          <li><a href="https://www.nerdy.com/" target="_blank" rel="noopener">Who we are</a></li>
         </ul>
         <a class="btn secondary" href="#roles">See roles</a>
       </nav>
@@ -934,49 +261,36 @@
       <section class="hero">
         <div class="wrap hero-grid">
           <div class="hero-copy">
-            <span class="eyebrow">Careers at Nerdy</span>
-            <h1>Build the future of <span class="display-italic">live learning</span>.</h1>
-            <p class="hero-lede">Nerdy is the company behind Varsity Tutors and the Live + AI platform. We bring expert instruction, real-time product systems, and practical AI together so learners get personal support at scale.</p>
+            <span class="eyebrow">Now hiring · Engineering, Product &amp; Sales</span>
+            <h1>Build the <span class="gradient-text">Live + AI</span> Platform Transforming How People Learn.</h1>
+            <p class="hero-lede">At Nerdy (NYSE: NRDY), we pair expert instructors with real-time generative AI to deliver personalized learning at scale — for every learner, from preschool fundamentals to professional mastery.</p>
             <div class="hero-actions">
-              <a class="btn" href="#roles">Explore open roles <span aria-hidden="true">-&gt;</span></a>
-              <a class="btn secondary" href="#work">How we work</a>
+              <a class="btn" href="#roles">Explore open roles <span aria-hidden="true">→</span></a>
+              <a class="btn secondary" href="#how">How we work</a>
             </div>
           </div>
-
-          <aside class="hero-panel" aria-label="Nerdy team">
-            <div class="hero-panel-photo">
-              <img src="team-photo-1.jpeg" alt="Nerdy teammates gathered at a company event">
-            </div>
-            <p class="hero-caption"><strong>Global, remote-first, outcomes-focused.</strong> We work across engineering, product, sales, support, operations, and learning science.</p>
-          </aside>
-        </div>
-      </section>
-
-      <div class="marquee" aria-label="Nerdy careers themes">
-        <div class="marquee-track">
-          <span>Live learning</span><span>AI-native workflows</span><span>Founder pace</span><span>High ownership</span><span>Real learner outcomes</span>
-          <span>Live learning</span><span>AI-native workflows</span><span>Founder pace</span><span>High ownership</span><span>Real learner outcomes</span>
-        </div>
-      </div>
-
-      <section class="section" id="mission">
-        <div class="wrap section-grid">
-          <div class="section-kicker">The mission</div>
-          <div>
-            <h2 class="section-title">Personal learning should feel like it was built for one person, then work for millions.</h2>
-            <p class="section-copy">We are building the systems that help instructors, learners, schools, and families make progress in real time. The work is product, platform, operations, and human craft all at once.</p>
-
-            <div class="mission-proof">
-              <blockquote class="quote">
-                The best learning moments are personal. Our job is to make those moments easier to create, measure, and improve.
-                <cite>Careers at Nerdy</cite>
-              </blockquote>
-              <ul class="proof-list" aria-label="What guides the team">
-                <li><strong>Learner signal</strong> We use product data, instructor feedback, and research to understand what helps learners move forward.</li>
-                <li><strong>Live expertise</strong> AI supports the work, but human instruction remains at the center of the experience.</li>
-                <li><strong>Practical shipping</strong> Teams prototype, evaluate, launch, and learn with tight feedback loops.</li>
-              </ul>
-            </div>
+          <div class="liveai-stage" aria-label="Live plus AI learning diagram">
+            <svg viewBox="0 0 560 560" role="img" aria-labelledby="liveai-title">
+              <title id="liveai-title">Learner, tutor, and AI core connected in real time</title>
+              <defs>
+                <linearGradient id="aiGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#D09B5D"/><stop offset="50%" stop-color="#ECE4D4"/><stop offset="100%" stop-color="#6F8FAF"/></linearGradient>
+                <path id="path-l-to-ai" d="M 130 145 C 180 200, 220 220, 280 260" fill="none"/>
+                <path id="path-ai-to-t" d="M 280 260 C 340 220, 380 200, 430 145" fill="none"/>
+                <path id="path-t-to-ai" d="M 430 145 C 410 230, 360 270, 290 280" fill="none"/>
+                <path id="path-ai-to-l" d="M 280 280 C 220 290, 180 320, 130 415" fill="none"/>
+              </defs>
+              <circle cx="280" cy="280" r="190" fill="url(#aiGrad)" opacity="0.08"/>
+              <use href="#path-l-to-ai" class="conn-path"/><use href="#path-ai-to-t" class="conn-path"/><use href="#path-t-to-ai" class="conn-path"/><use href="#path-ai-to-l" class="conn-path"/>
+              <circle class="ai-pulse-ring r1" cx="280" cy="280" r="60"/><circle class="ai-pulse-ring r2" cx="280" cy="280" r="60"/><circle class="ai-pulse-ring r3" cx="280" cy="280" r="60"/>
+              <g transform="translate(40 95)"><rect class="node-card" width="165" height="92" rx="14"/><text class="node-kicker" x="18" y="30">Learner</text><text class="node-label" x="18" y="56">Aria</text><text class="node-meta" x="18" y="76">Algebra · Live</text></g>
+              <g transform="translate(355 95)"><rect class="node-card" width="165" height="92" rx="14"/><text class="node-kicker" x="18" y="30">Tutor</text><text class="node-label" x="18" y="56">Marcus</text><text class="node-meta" x="18" y="76">Math · M.Ed.</text></g>
+              <g transform="translate(280 280)"><circle cx="0" cy="0" r="58" fill="url(#aiGrad)" opacity="0.85"/><circle cx="0" cy="0" r="40" fill="rgba(34,51,73,0.76)"/><path d="M0 -18 L5 -4 L18 0 L5 4 L0 18 L-5 4 L-18 0 L-5 -4 Z" fill="#FBF8F2"/><text class="node-kicker" x="0" y="74" text-anchor="middle">Live + AI</text></g>
+              <g transform="translate(40 380)"><rect class="node-card" width="165" height="82" rx="14"/><text class="node-kicker" x="18" y="30">Outcome</text><text class="node-label" x="18" y="58">+18% mastery</text></g>
+              <g transform="translate(355 380)"><rect class="node-card" width="165" height="82" rx="14"/><text class="node-kicker" x="18" y="30">Signals / sec</text><text class="node-label" x="18" y="58">847</text></g>
+              <g class="token"><text x="0" y="0">why x²?</text><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#path-l-to-ai"/></animateMotion></g>
+              <g class="token"><text x="0" y="0">scaffold + hint</text><animateMotion dur="4s" begin="1s" repeatCount="indefinite"><mpath href="#path-ai-to-t"/></animateMotion></g>
+              <g class="token"><text x="0" y="0">got it ✓</text><animateMotion dur="4s" begin="2s" repeatCount="indefinite"><mpath href="#path-t-to-ai"/></animateMotion></g>
+            </svg>
           </div>
         </div>
       </section>
@@ -985,86 +299,78 @@
         <div class="wrap section-grid">
           <div class="section-kicker">Company snapshot</div>
           <div>
-            <h2 class="section-title" id="stats-title">Recent public-company metrics.</h2>
-            <p class="stats-intro" id="stats-source">Q2 2026 figures from the shareholder letter. Update the stats config in the page script each quarter.</p>
-            <div class="stats-grid" id="stats-grid" aria-live="polite"></div>
+            <h2 class="section-title" id="stats-title">Real Q2 2026 figures.</h2>
+            <div class="stats-grid" id="stats-grid"></div>
           </div>
         </div>
       </section>
 
-      <section class="section" aria-labelledby="team-title">
+      <section class="section mission" id="mission">
         <div class="wrap section-grid">
-          <div class="section-kicker">The team</div>
+          <div class="section-kicker">The mission</div>
           <div>
-            <h2 class="section-title" id="team-title">Meet the Nerds building it.</h2>
-            <p class="section-copy">Our teams span product builders, educators, designers, analysts, sellers, and operators across remote hubs and company gatherings.</p>
-            <div class="photo-grid">
-              <div class="team-photo large"><img src="team-photo-2.jpeg" alt="Nerdy team members at a company summit"></div>
-              <div class="team-photo"><img src="team-photo-3.jpeg" alt="Nerdy teammates socializing at an evening event"></div>
-              <div class="team-photo"><img src="team-photo-4.jpeg" alt="Nerdy teammates gathered outdoors"></div>
+            <h2 class="section-title">Transforming how people learn — for the <span class="gradient-text">next 200 years.</span></h2>
+            <p class="section-copy">Classrooms have relied on a one-size-fits-all model for two centuries. That era is giving way to something better. Our Live + AI™ platform makes genuinely personalized learning — at global scale — the new default.</p>
+            <div class="quote-card">
+              <div class="quote-mark">“</div>
+              <div>
+                <blockquote>Artificial intelligence is rewriting education — and its power is greatest when it amplifies the human spark at learning's core. Join us and build that future.</blockquote>
+                <cite>Chuck Cohn<span>Founder &amp; CEO, Nerdy</span></cite>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="work">
-        <div class="wrap section-grid">
-          <div class="section-kicker">AI in practice</div>
-          <div>
-            <h2 class="section-title">How the work gets done here.</h2>
-            <p class="section-copy">AI at Nerdy is a working system: a way to sharpen context, tighten feedback, and make decisions with better evidence. It is embedded in craft, review, measurement, and collaboration.</p>
-            <div class="practice-grid">
-              <article class="practice-item">
-                <div class="practice-num">01 / Engineering</div>
-                <h3>Build with evals, observability, and fast review loops.</h3>
-                <p>Engineers use AI to explore designs, draft tests, review changes, and investigate production signals while keeping ownership of the systems they ship.</p>
-              </article>
-              <article class="practice-item">
-                <div class="practice-num">02 / Product</div>
-                <h3>Turn product questions into prototypes and evidence.</h3>
-                <p>PMs and designers use AI to synthesize learner signal, stress-test flows, and define evaluation criteria before experiences reach learners.</p>
-              </article>
-              <article class="practice-item">
-                <div class="practice-num">03 / Sales</div>
-                <h3>Make every conversation more prepared and specific.</h3>
-                <p>Go-to-market teams use AI to understand school and family context, tailor follow-ups, and connect the right learning solution to the right need.</p>
-              </article>
-              <article class="practice-item">
-                <div class="practice-num">04 / Operations</div>
-                <h3>Keep decisions connected to live learner and team context.</h3>
-                <p>Operations teams use AI to organize knowledge, surface patterns, and coordinate support so people can make clearer, faster decisions.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section principles">
+      <section class="section dark-section" id="how">
         <div class="wrap section-grid">
           <div class="section-kicker">How we work</div>
           <div>
-            <h2 class="section-title">Editorial standards for a high-ownership team.</h2>
-            <div class="principle-stack">
-              <article class="principle-row">
-                <div class="principle-index">01</div>
-                <h3>Start with the learner.</h3>
-                <p>The clearest work begins with a learner problem, a signal we can observe, and a way to know whether the experience improved.</p>
-              </article>
-              <article class="principle-row">
-                <div class="principle-index">02</div>
-                <h3>Own the loop.</h3>
-                <p>Teams stay close to discovery, build, launch, support, and measurement so learning compounds instead of getting handed off.</p>
-              </article>
-              <article class="principle-row">
-                <div class="principle-index">03</div>
-                <h3>Move with taste.</h3>
-                <p>We value speed, but not noise. Strong craft, readable systems, and practical judgment are how fast work stays durable.</p>
-              </article>
-              <article class="principle-row">
-                <div class="principle-index">04</div>
-                <h3>Make the work legible.</h3>
-                <p>We write things down, show evidence, share context, and make it easy for the next person to improve what we shipped.</p>
-              </article>
+            <h2 class="section-title">An AI-native, free-market meritocracy moving at <span class="gradient-text">founder pace.</span></h2>
+            <p class="section-copy">Four principles shape every team, decision, and hire. They're how we stay accountable to each other — and to our learners.</p>
+            <div class="principles-stack">
+              <article class="principle-row"><div class="principle-num">01</div><h3 class="principle-headline">AI-native at <em>every</em> level — from day-one hires to the C-suite.</h3><p class="principle-detail">Everyone here builds and ships with generative AI. It's table stakes, not a differentiator — and it's how we move 10× faster than legacy education companies.</p></article>
+              <article class="principle-row"><div class="principle-num">02</div><h3 class="principle-headline">Move at <em>founder velocity.</em> Prototype in hours, ship in days.</h3><p class="principle-detail">We measure in real user outcomes, not quarterly roadmaps. If you've ever wanted to skip the JIRA ticket and just build the thing — you'll fit right in.</p></article>
+              <article class="principle-row"><div class="principle-num">03</div><h3 class="principle-headline">Full-stack <em>ownership.</em> You design, build, and run what you ship.</h3><p class="principle-detail">Accountability is a feature of the work — not a ceremony layered on top. The person closest to the problem owns it end-to-end, with the autonomy and tooling to fix it.</p></article>
+              <article class="principle-row"><div class="principle-num">04</div><h3 class="principle-headline">Rewarded on <em>contribution.</em> Compensation tracks impact, not tenure.</h3><p class="principle-detail">We formally measure AI leverage and how well you live our principles. Top performers in their first year out-earn senior peers elsewhere — by a lot.</p></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="ai-in-the-work">
+        <div class="wrap section-grid">
+          <div class="section-kicker">AI, in practice</div>
+          <div>
+            <h2 class="section-title">It's not a slogan — it's how the work actually gets done.</h2>
+            <p class="section-copy">"AI-first" gets thrown around a lot. Here's what it concretely looks like across the company on any given Tuesday.</p>
+            <div class="ai-card-grid">
+              <article class="practice-card span-5"><span class="practice-label">Engineering</span><h3>PRs are co-authored. Reviews are AI-assisted. On-call is augmented.</h3><ul><li>Every engineer pairs with Claude Code daily — for design, refactors, and tests.</li><li>Internal Live + AI agents triage on-call alerts and draft postmortems.</li><li>Eval suites gate every model change before it touches a learner session.</li></ul></article>
+              <article class="practice-card span-4"><span class="practice-label">Product</span><h3>Specs become evals before they become tickets.</h3><ul><li>Every feature ships with a prompt-and-eval pair, written by the PM.</li><li>Discovery research uses AI to synthesize 10× more learner sessions.</li><li>Roadmaps are continuous — not quarterly. Decisions get made in days.</li></ul><p class="practice-stat">200+ production evals running in CI right now.</p></article>
+              <article class="practice-card span-3 dark-card"><span class="practice-label">Across the company</span><h3>Every Nerd has agents.</h3><ul><li>Recruiters, ops, finance, legal — everyone has a personal stack of agents.</li><li>Internal agent marketplace with 40+ shared, version-controlled agents.</li></ul></article>
+              <article class="practice-card span-4"><span class="practice-label">Sales &amp; GTM</span><h3>Reps run a team — of one human and a fleet of agents.</h3><ul><li>Live AI listens on every district call to draft tailored proposals.</li><li>Pipeline forecasts get AI-rewritten daily from CRM &amp; email signal.</li><li>Top reps spend ~70% of their day talking to humans, not data entry.</li></ul><p class="practice-stat">3.4× deal velocity since enabling agents on the floor.</p></article>
+              <article class="practice-card span-4"><span class="practice-label">Operations &amp; Support</span><h3>Issues route, escalate, and resolve themselves — until they shouldn't.</h3><ul><li>~80% of L1 support tickets resolved without a human touching them.</li><li>Humans focus on the hard 20% — and on improving the agents that handle the rest.</li></ul><p class="practice-stat">Maya, our AI concierge, now handles a meaningful share of in-product customer interactions.</p></article>
+              <a class="practice-card span-4 dark-card" href="#roles"><span class="practice-label teal-label">→ Want in?</span><h3>If this sounds like the job description you've been waiting for, we're hiring.</h3><span class="text-link gradient-text">See open roles →</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hubs-strip" aria-label="Where we are">
+        <div class="hubs-track" id="hubs-track"></div>
+      </section>
+
+      <section class="section team-photo-section">
+        <div class="wrap section-grid">
+          <div class="section-kicker">The team</div>
+          <div>
+            <h2 class="section-title">Meet the Nerds.</h2>
+            <p class="section-copy">A global team of engineers, educators, designers, and operators building the future of learning together.</p>
+            <div class="team-photo-frame">
+              <div class="team-photo-tile tile-main"><img src="team-photo-1.jpeg" alt="The Nerdy team at their annual summit" loading="lazy"></div>
+              <div class="team-photo-tile tile-side"><img src="team-photo-2.jpeg" alt="Nerdy team at a baseball-themed gathering" loading="lazy"></div>
+              <div class="team-photo-tile tile-side"><img src="team-photo-3.jpeg" alt="Nerdy team at an evening meet-up" loading="lazy"></div>
+              <div class="team-photo-tile tile-side"><img src="team-photo-4.jpeg" alt="Nerdy team around a rooftop firepit" loading="lazy"></div>
             </div>
           </div>
         </div>
@@ -1075,14 +381,11 @@
           <div class="section-kicker">Open roles</div>
           <div>
             <h2 class="section-title">Find your next role.</h2>
-            <p class="section-copy">Live openings load from the Paylocity Recruiting Job Feed. Use the filters to narrow the current list, or view every role on the Nerdy careers board.</p>
+            <p class="section-copy">We're hiring across Engineering, Product, Sales, and Operations — remote, global, and built for builders. Whether you're closing deals, keeping systems running, or shipping code — the same principles apply here. We move fast, reward contribution, and hold ourselves accountable to learners, not process. Every role at Nerdy is a front-row seat to one of the most consequential shifts in education.</p>
             <div class="filters" id="role-filters" aria-label="Filter roles by team"></div>
             <p class="roles-status" id="roles-status">Loading roles from Paylocity...</p>
             <ul class="role-list" id="role-list"></ul>
-            <div class="roles-footer">
-              <span class="roles-status" id="roles-count"></span>
-              <a class="all-roles" href="https://careers.nerdy.com/jobs" target="_blank" rel="noopener">View all roles on careers.nerdy.com -&gt;</a>
-            </div>
+            <div class="roles-footer"><span class="roles-status" id="roles-count"></span><a class="all-roles" href="https://careers.nerdy.com/jobs" target="_blank" rel="noopener">View all roles on careers.nerdy.com →</a></div>
           </div>
         </div>
       </section>
@@ -1091,58 +394,39 @@
         <div class="wrap section-grid">
           <div class="section-kicker">Candidate prep</div>
           <div>
-            <h2 class="section-title">Everything you need to prep with confidence.</h2>
-            <p class="section-copy">These existing articles are already live; the cards here simply carry the new careers design system into the landing page.</p>
+            <h2 class="section-title">Everything you need to ace your interviews.</h2>
+            <p class="section-copy">Great candidate experiences start with transparency. Read up on how we hire, what we look for, and what it's actually like to work here — before you even apply.</p>
             <div class="resources-grid">
-              <a class="resource-card featured" href="/nerdy-by-nature">
-                <span class="resource-tag pill">Candidate guide</span>
-                <h3>Nerdy by Nature: a candidate's guide to our hiring process.</h3>
-                <p>Interview structure, resume tips, policies, and what to expect throughout the process.</p>
-                <span class="resource-link">Read the guide -&gt;</span>
-              </a>
-              <a class="resource-card" href="/ai-at-nerdy">
-                <span class="resource-tag pill">A note from the team</span>
-                <h3>AI at Nerdy.</h3>
-                <p>A candid look at what AI-native work means in practice across product, learning, operations, and go-to-market teams.</p>
-                <span class="resource-link">Read the article -&gt;</span>
-              </a>
-              <a class="resource-card" href="/day-in-the-life">
-                <span class="resource-tag pill">Day in the life</span>
-                <h3>A day in the life of an AI-Native Engineer.</h3>
-                <p>How engineers build, review, ship, and learn while working on the Live + AI platform.</p>
-                <span class="resource-link">Read the article -&gt;</span>
-              </a>
+              <a class="resource-card featured" href="/nerdy-by-nature"><span class="resource-tag pill">Candidate guide</span><h3>Nerdy by Nature: a candidate's guide to our hiring process.</h3><p>Walk through our end-to-end interview process, get resume tips, and read our policies — including how (and when) to use AI during your interview.</p><span class="resource-link">Read the guide →</span></a>
+              <a class="resource-card" href="/ai-at-nerdy"><span class="resource-tag pill">A note from the team</span><h3>AI at Nerdy.</h3><p>A short, candid look at what "AI-first" actually means in practice — for the engineers shipping product, the learning scientists shaping curriculum, the operators running the business, and everyone in between.</p><span class="resource-link">Read the article →</span></a>
+              <a class="resource-card" href="/day-in-the-life"><span class="resource-tag pill">Day in the life</span><h3>A day in the life of an AI-Native Engineer at Nerdy.</h3><p>What it actually looks like to build on Live + AI — how our engineers work, ship, and use AI as a force multiplier.</p><span class="resource-link">Read the article →</span></a>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="closing">
+      <section class="section bench" id="bench">
         <div class="wrap">
-          <span class="eyebrow">Ready to build?</span>
-          <h2 class="section-title">Bring your craft to the future of learning.</h2>
-          <div class="closing-actions">
-            <a class="btn" href="#roles">See open roles</a>
-            <a class="btn secondary" href="https://www.nerdy.com/" target="_blank" rel="noopener">Learn about Nerdy</a>
-          </div>
+          <h2 class="section-title">Product Engineer? <span class="gradient-text">AI-native builder?</span> Show us what you've made.</h2>
+          <p class="bench-copy">We're always looking for great talent — no open role required. Send us something you've built: a project, a prototype, a tool, a side quest. Every submission gets a personal review from recruiting and engineering leaders. We're building our bench for what's next.</p>
+          <form class="bench-form" id="bench-form">
+            <textarea id="bench-message" required minlength="20" spellcheck="false" placeholder="Hi Nerdy — here's something I built. It does X, learns from Y, and was made with Z. Here's why I'd be a great fit for the Product Engineering bench…"></textarea>
+            <div class="bench-form-bar"><span class="bench-hint">Reviewed by recruiting &amp; engineering leaders · careers@nerdy.com</span><button class="btn" id="bench-submit" type="submit">Send →</button></div>
+            <p class="form-error" id="bench-error" hidden></p>
+          </form>
+          <div class="bench-success" id="bench-success" hidden><h3>Thanks — we got it.</h3><p>A real human on our recruiting or engineering team will personally review your work.</p></div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="wrap footer-inner">
-        <div>
-          <a class="footer-logo" href="#top" aria-label="Nerdy Careers home">
-            <img src="assets/nerdy-logo-current-white.png" alt="Nerdy">
-          </a>
-          <p class="footer-copy">Nerdy is the parent company of Varsity Tutors and a leading platform for live, AI-powered learning.</p>
+      <div class="wrap">
+        <div class="footer-inner">
+          <div><a class="footer-logo" href="#top" aria-label="Nerdy Careers home"><img src="assets/nerdy-logo-current-white.png" alt="Nerdy"></a><p class="footer-copy">Nerdy is the parent company of Varsity Tutors — a leading platform for live, AI-powered learning.</p></div>
+          <div class="footer-col"><h5>Company</h5><ul><li><a href="https://www.nerdy.com/">About Nerdy</a></li><li><a href="https://www.varsitytutors.com/">Varsity Tutors</a></li><li><a href="https://investors.nerdy.com/overview/default.aspx">Investor relations</a></li><li><a href="#">Press</a></li></ul></div>
+          <div class="footer-col"><h5>Legal</h5><ul><li><a href="#">Privacy policy</a></li><li><a href="#">Terms of use</a></li><li><a href="#">Accessibility</a></li><li><a href="#">Candidate privacy</a></li></ul></div>
         </div>
-        <nav class="footer-links" aria-label="Footer links">
-          <a href="https://www.nerdy.com/" target="_blank" rel="noopener">About</a>
-          <a href="https://www.varsitytutors.com/" target="_blank" rel="noopener">Varsity Tutors</a>
-          <a href="#resources">Candidate prep</a>
-          <a href="https://careers.nerdy.com/jobs" target="_blank" rel="noopener">All roles</a>
-        </nav>
+        <div class="footer-bottom"><span>© 2026 Nerdy Inc. All rights reserved.</span><span class="ticker">NYSE: NRDY</span></div>
       </div>
     </footer>
   </div>
@@ -1150,53 +434,40 @@
   <script>
     const QUARTERLY_STATS = {
       period: "Q2 2026",
-      source: "Q2 2026 shareholder letter",
       updateReminder: "Update this object each quarter when new shareholder-letter metrics are available.",
       metrics: [
-        { value: "$43.3M", label: "Revenue" },
-        { value: "84%", label: "Consumer revenue mix" },
-        { value: "$366", label: "Average revenue per membership" },
-        { value: "64.7%", label: "Gross margin" },
-        { value: "29.1K", label: "Active memberships" }
+        { value: "$43.3M", label: "Q2 2026 revenue" },
+        { value: "29.1K", label: "Active learning memberships as of June 30, 2026" },
+        { value: "$366", label: "Average revenue per member per month, up 5% YoY" },
+        { value: "64.7%", label: "Gross margin in Q2 2026, up 320 bps YoY" },
+        { value: "10M+", label: "Tutoring sessions delivered", gradient: true }
       ]
     };
-
     const PAYLOCITY_GUID = "e7a376a2-68c8-4121-812d-072b4473a1dc";
     const PAYLOCITY_FEED_URL = "https://recruiting.paylocity.com/recruiting/v2/api/feed/jobs/" + PAYLOCITY_GUID;
     const CAREERS_URL = "https://careers.nerdy.com/jobs";
     const FILTERS = ["All", "Engineering", "Product", "Sales", "Operations"];
-
-    const state = {
-      jobs: [],
-      activeFilter: "All",
-      loading: true,
-      error: null
-    };
-
+    const HUBS = ["Remote-first · 18 countries", "St. Louis, MO · HQ", "New York, NY · Hub", "Hyderabad, India · Hub", "São Paulo, Brazil · LATAM", "Mexico City · LATAM", "Buenos Aires · LATAM", "London, UK", "Toronto, Canada", "Lisbon, Portugal"];
+    const state = { jobs: [], activeFilter: "All", loading: true, error: null };
     const statsGrid = document.getElementById("stats-grid");
-    const statsSource = document.getElementById("stats-source");
+    const hubsTrack = document.getElementById("hubs-track");
     const filtersEl = document.getElementById("role-filters");
     const rolesStatus = document.getElementById("roles-status");
     const rolesCount = document.getElementById("roles-count");
     const roleList = document.getElementById("role-list");
 
     function renderStats() {
-      statsSource.textContent = QUARTERLY_STATS.period + " figures from the shareholder letter. " + QUARTERLY_STATS.updateReminder;
-      statsGrid.innerHTML = QUARTERLY_STATS.metrics.map((metric) => (
-        '<article class="metric">' +
-          '<div class="metric-value">' + escapeHtml(metric.value) + '</div>' +
-          '<div class="metric-label">' + escapeHtml(metric.label) + '</div>' +
-          '<div class="metric-note">' + escapeHtml(QUARTERLY_STATS.source) + '</div>' +
-        '</article>'
-      )).join("");
+      statsGrid.innerHTML = QUARTERLY_STATS.metrics.map((metric) => '<article class="metric ' + (metric.gradient ? 'gradient-stat' : '') + '"><div class="metric-value ' + (metric.gradient ? 'gradient-text' : '') + '">' + escapeHtml(metric.value) + '</div><div class="metric-label">' + escapeHtml(metric.label) + '</div></article>').join("");
     }
-
+    function renderHubs() {
+      const markup = HUBS.concat(HUBS).map((hub) => '<span class="hub-pill"><span class="hub-dot"></span>' + escapeHtml(hub) + '</span>').join("");
+      hubsTrack.innerHTML = markup;
+    }
     function normalizeDepartment(rawDepartment, title) {
       const department = String(rawDepartment || "").trim();
       const titleText = String(title || "").toLowerCase();
       const exact = FILTERS.find((filter) => filter !== "All" && department.toLowerCase() === filter.toLowerCase());
       if (exact) return exact;
-
       const loose = department.toLowerCase();
       if (loose.includes("product") || loose.includes("design") || titleText.includes("product") || titleText.includes("designer")) return "Product";
       if (loose.includes("engineer") || loose.includes("technology") || titleText.includes("engineer") || titleText.includes("software")) return "Engineering";
@@ -1204,127 +475,45 @@
       if (loose.includes("operations") || loose.includes("support") || loose.includes("customer") || titleText.includes("operations") || titleText.includes("support")) return "Operations";
       return "Other";
     }
-
     function locationLabel(location) {
       if (!location) return "Location flexible";
-      const parts = [
-        location.locationDisplayName,
-        location.name,
-        location.metro,
-        location.city && location.state ? location.city + ", " + location.state : location.city || location.state
-      ].filter(Boolean);
+      const parts = [location.locationDisplayName, location.name, location.metro, location.city && location.state ? location.city + ", " + location.state : location.city || location.state].filter(Boolean);
       return parts[0] || "Location flexible";
     }
-
     function formatDate(value) {
       if (!value) return "Recently posted";
       const date = new Date(value);
       if (Number.isNaN(date.getTime())) return "Recently posted";
       return "Posted " + date.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
     }
-
-    function normalizeJob(job) {
-      const title = job.title || job.Title || "Open role";
-      const rawDepartment = job.hiringDepartment || job.HiringDepartment || "";
-      const department = normalizeDepartment(rawDepartment, title);
-      const jobTypes = job.jobTypesArray || job.JobTypesArray || [];
-      return {
-        id: job.jobId || job.JobId || title,
-        title,
-        department,
-        rawDepartment,
-        location: locationLabel(job.jobLocation || job.JobLocation),
-        type: Array.isArray(jobTypes) && jobTypes.length ? jobTypes.join(", ") : humanizeJobType(job.jobTypes || job.JobTypes),
-        applyUrl: job.applyUrl || job.ApplyUrl || CAREERS_URL,
-        publishedDate: job.publishedDate || job.PublishedDate || job.createdUtc || job.CreatedUtc
-      };
-    }
-
     function humanizeJobType(value) {
       const type = String(value || "").trim();
       if (!type) return "Open role";
-      return type
-        .replace(/fulltime/gi, "Full-time")
-        .replace(/parttime/gi, "Part-time")
-        .replace(/temporary/gi, "Temporary")
-        .split(",")
-        .map((part) => part.trim())
-        .filter(Boolean)
-        .join(", ");
+      return type.replace(/fulltime/gi, "Full-time").replace(/parttime/gi, "Part-time").replace(/temporary/gi, "Temporary").split(",").map((part) => part.trim()).filter(Boolean).join(", ");
     }
-
-    function filteredJobs() {
-      if (state.activeFilter === "All") return state.jobs;
-      return state.jobs.filter((job) => job.department === state.activeFilter);
+    function normalizeJob(job) {
+      const title = job.title || job.Title || "Open role";
+      const rawDepartment = job.hiringDepartment || job.HiringDepartment || "";
+      const jobTypes = job.jobTypesArray || job.JobTypesArray || [];
+      return { id: job.jobId || job.JobId || title, title, department: normalizeDepartment(rawDepartment, title), rawDepartment, location: locationLabel(job.jobLocation || job.JobLocation), type: Array.isArray(jobTypes) && jobTypes.length ? jobTypes.join(", ") : humanizeJobType(job.jobTypes || job.JobTypes), applyUrl: job.applyUrl || job.ApplyUrl || CAREERS_URL, publishedDate: job.publishedDate || job.PublishedDate || job.createdUtc || job.CreatedUtc };
     }
-
-    function countsByFilter() {
-      return FILTERS.reduce((counts, filter) => {
-        counts[filter] = filter === "All"
-          ? state.jobs.length
-          : state.jobs.filter((job) => job.department === filter).length;
-        return counts;
-      }, {});
-    }
-
+    function filteredJobs() { return state.activeFilter === "All" ? state.jobs : state.jobs.filter((job) => job.department === state.activeFilter); }
+    function countsByFilter() { return FILTERS.reduce((counts, filter) => { counts[filter] = filter === "All" ? state.jobs.length : state.jobs.filter((job) => job.department === filter).length; return counts; }, {}); }
     function renderFilters() {
       const counts = countsByFilter();
-      filtersEl.innerHTML = FILTERS.map((filter) => {
-        const active = state.activeFilter === filter;
-        return '<button class="pill filter-pill" type="button" data-filter="' + filter + '" aria-pressed="' + active + '">' +
-          escapeHtml(filter) + '<span class="count">' + (counts[filter] || 0) + '</span>' +
-        '</button>';
-      }).join("");
-
-      filtersEl.querySelectorAll("button").forEach((button) => {
-        button.addEventListener("click", () => {
-          state.activeFilter = button.dataset.filter;
-          renderJobs();
-        });
-      });
+      filtersEl.innerHTML = FILTERS.map((filter) => '<button class="pill filter-pill" type="button" data-filter="' + filter + '" aria-pressed="' + (state.activeFilter === filter) + '">' + escapeHtml(filter) + '<span class="count">' + (counts[filter] || 0) + '</span></button>').join("");
+      filtersEl.querySelectorAll("button").forEach((button) => button.addEventListener("click", () => { state.activeFilter = button.dataset.filter; renderJobs(); }));
     }
-
     function renderJobs() {
       renderFilters();
       const jobs = filteredJobs();
-      rolesStatus.textContent = state.error
-        ? "Unable to load roles from Paylocity right now. Please use the careers.nerdy.com link below."
-        : state.loading
-          ? "Loading roles from Paylocity..."
-          : "Showing " + jobs.length + " of " + state.jobs.length + " live roles.";
+      rolesStatus.textContent = state.error ? "Unable to load roles from Paylocity right now. Please use the careers.nerdy.com link below." : state.loading ? "Loading roles from Paylocity..." : "Showing " + jobs.length + " of " + state.jobs.length + " live roles.";
       rolesCount.textContent = state.error ? "" : "Live role data via Paylocity Recruiting Job Feed.";
-
-      if (state.error) {
-        roleList.innerHTML = '<li><a class="role-row" href="' + CAREERS_URL + '" target="_blank" rel="noopener">' +
-          '<div><div class="role-title">View current openings on careers.nerdy.com</div><div class="role-meta">The embedded feed could not be loaded.</div></div>' +
-          '<div class="role-location">Careers board</div><div class="role-date">Live source</div><div class="role-arrow">-&gt;</div>' +
-        '</a></li>';
-        return;
-      }
-
-      if (state.loading) {
-        roleList.innerHTML = "";
-        return;
-      }
-
-      if (!jobs.length) {
-        roleList.innerHTML = '<li class="role-row" aria-live="polite"><div><div class="role-title">No roles in this category today.</div><div class="role-meta">Check all roles or visit the full careers board.</div></div></li>';
-        return;
-      }
-
-      roleList.innerHTML = jobs.map((job) => (
-        '<li><a class="role-row" href="' + escapeAttribute(job.applyUrl) + '" target="_blank" rel="noopener">' +
-          '<div>' +
-            '<div class="role-title">' + escapeHtml(job.title) + '</div>' +
-            '<div class="role-meta">' + escapeHtml(job.department === "Other" ? (job.rawDepartment || "Team to be confirmed") : job.department) + ' / ' + escapeHtml(job.type) + '</div>' +
-          '</div>' +
-          '<div class="role-location">' + escapeHtml(job.location) + '</div>' +
-          '<div class="role-date">' + escapeHtml(formatDate(job.publishedDate)) + '</div>' +
-          '<div class="role-arrow" aria-hidden="true">-&gt;</div>' +
-        '</a></li>'
-      )).join("");
+      if (state.error) { roleList.innerHTML = '<li><a class="role-row" href="' + CAREERS_URL + '" target="_blank" rel="noopener"><div><div class="role-title">View current openings on careers.nerdy.com</div><div class="role-meta">The embedded feed could not be loaded.</div></div><div class="role-location">Careers board</div><div class="role-date">Live source</div><div class="role-arrow">→</div></a></li>'; return; }
+      if (state.loading) { roleList.innerHTML = ""; return; }
+      if (!jobs.length) { roleList.innerHTML = '<li class="role-row" aria-live="polite"><div><div class="role-title">No roles in this category today.</div><div class="role-meta">Check all roles or visit the full careers board.</div></div></li>'; return; }
+      roleList.innerHTML = jobs.map((job) => '<li><a class="role-row" href="' + escapeAttribute(job.applyUrl) + '" target="_blank" rel="noopener"><div><div class="role-title">' + escapeHtml(job.title) + '</div><div class="role-meta">' + escapeHtml(job.department === "Other" ? (job.rawDepartment || "Team to be confirmed") : job.department) + ' / ' + escapeHtml(job.type) + '</div></div><div class="role-location">' + escapeHtml(job.location) + '</div><div class="role-date">' + escapeHtml(formatDate(job.publishedDate)) + '</div><div class="role-arrow" aria-hidden="true">→</div></a></li>').join("");
     }
-
     async function loadJobs() {
       renderJobs();
       try {
@@ -1334,30 +523,36 @@
         const jobs = Array.isArray(data) ? data : (data.jobs || data.Jobs || []);
         state.jobs = jobs.map(normalizeJob).sort((a, b) => new Date(b.publishedDate || 0) - new Date(a.publishedDate || 0));
         state.error = null;
-      } catch (error) {
-        console.error(error);
-        state.error = error;
-      } finally {
-        state.loading = false;
-        renderJobs();
-      }
+      } catch (error) { console.error(error); state.error = error; }
+      finally { state.loading = false; renderJobs(); }
     }
-
-    function escapeHtml(value) {
-      return String(value == null ? "" : value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+    function setupBenchForm() {
+      const form = document.getElementById("bench-form");
+      const message = document.getElementById("bench-message");
+      const submit = document.getElementById("bench-submit");
+      const error = document.getElementById("bench-error");
+      const success = document.getElementById("bench-success");
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        error.hidden = true;
+        const value = message.value.trim();
+        if (value.length < 20) { error.textContent = "Please include a little more detail about what you built."; error.hidden = false; return; }
+        submit.disabled = true; submit.textContent = "Sending…";
+        try {
+          const response = await fetch("/.netlify/functions/bench-submission", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ message: value }) });
+          if (!response.ok) throw new Error("Unable to send right now.");
+          form.hidden = true; success.hidden = false;
+        } catch (submissionError) {
+          const subject = encodeURIComponent("Product Engineering bench submission");
+          const body = encodeURIComponent(value);
+          window.location.href = "mailto:careers@nerdy.com?subject=" + subject + "&body=" + body;
+          form.hidden = true; success.hidden = false;
+        } finally { submit.disabled = false; submit.textContent = "Send →"; }
+      });
     }
-
-    function escapeAttribute(value) {
-      return escapeHtml(value).replace(/`/g, "&#096;");
-    }
-
-    renderStats();
-    loadJobs();
+    function escapeHtml(value) { return String(value == null ? "" : value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;"); }
+    function escapeAttribute(value) { return escapeHtml(value).replace(/`/g, "&#096;"); }
+    renderStats(); renderHubs(); setupBenchForm(); loadJobs();
   </script>
 </body>
 </html>
