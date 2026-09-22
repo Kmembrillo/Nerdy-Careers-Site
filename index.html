@@ -99,10 +99,10 @@
     .section-copy { max-width: 760px; margin-top: 24px; color: var(--ink-soft); font-size: clamp(1rem, 1.35vw, 1.16rem); }
 
     .stats { background: var(--paper); }
-    .stats-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--hairline); border-left: 1px solid var(--hairline); }
-    .metric { min-height: 190px; padding: clamp(20px, 2.5vw, 30px); border-right: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); background: rgba(243,238,229,0.45); overflow: hidden; }
-    .metric-value { font-size: clamp(34px, 3.2vw, 48px); line-height: 0.95; letter-spacing: -0.04em; font-weight: 700; white-space: nowrap; }
-    .metric-label { margin-top: 16px; color: var(--ink-soft); font-size: 0.94rem; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); border-top: 1px solid var(--hairline); border-left: 1px solid var(--hairline); }
+    .metric { min-height: 168px; padding: clamp(18px, 2.2vw, 26px); border-right: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); background: rgba(243,238,229,0.45); overflow: hidden; }
+    .metric-value { font-size: clamp(30px, 2.65vw, 42px); line-height: 1; letter-spacing: -0.025em; font-weight: 700; white-space: nowrap; font-variant-numeric: lining-nums tabular-nums; }
+    .metric-label { margin-top: 14px; color: var(--ink-soft); font-size: 0.9rem; line-height: 1.42; }
 
     .mission { background: var(--cream); }
     .quote-card { margin-top: clamp(38px, 6vw, 70px); background: var(--paper); border: 1px solid var(--hairline); padding: clamp(30px, 5vw, 54px); display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 24px; max-width: 920px; }
