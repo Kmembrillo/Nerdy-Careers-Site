@@ -16,6 +16,12 @@ const plateCopy = {
     "A magnificent marble academy with a new wing taking shape, with fine golden geometric lines tracing the underlying architecture.",
 };
 
+const plateImages = {
+  academy: "/plate-1-new-academy.png",
+  athena: "/plate-2-athena.png",
+  newWing: "/plate-3-new-wing.png",
+};
+
 const stats = [
   {
     value: 43.3,
@@ -311,6 +317,7 @@ function Hero() {
             variant="plate-one"
             aspect="wide"
             alt={plateCopy.academy}
+            src={plateImages.academy}
             geometry={<PlateOneGeometry />}
           />
           <PlateCaption
@@ -389,6 +396,7 @@ function Mission() {
               variant="plate-two"
               aspect="portrait"
               alt={plateCopy.athena}
+            src={plateImages.athena}
               geometry={<PlateTwoGeometry />}
               lazy
             />
@@ -594,6 +602,7 @@ function OpenRoles() {
             variant="plate-three"
             aspect="ultrawide"
             alt={plateCopy.newWing}
+            src={plateImages.newWing}
             geometry={<PlateThreeGeometry />}
             lazy
             dark
@@ -845,15 +854,22 @@ function Footer() {
   );
 }
 
-function PlateFrame({ aspect, alt, geometry, lazy = false, dark = false, variant }) {
+function PlateFrame({ aspect, alt, geometry, lazy = false, dark = false, variant, src }) {
+  const [imageFailed, setImageFailed] = useState(false);
+
   return (
     <figure className={`plate-frame ${aspect} ${dark ? "on-dark" : ""}`}>
-      {/* TODO: Replace this placeholder with the provided final art file for this slot. */}
-      <div className={`plate-placeholder ${variant}`} role="img" aria-label={alt}>
-        <span>{alt}</span>
-      </div>
+      {src && !imageFailed ? (
+        <img src={src} alt={alt} loading={lazy ? "lazy" : "eager"} onError={() => setImageFailed(true)} />
+      ) : (
+        <>
+          {/* TODO: Replace this placeholder if the final art file for this slot is unavailable. */}
+          <div className={`plate-placeholder ${variant}`} role="img" aria-label={alt}>
+            <span>{alt}</span>
+          </div>
+        </>
+      )}
       {SHOW_GEOMETRY ? geometry : null}
-      {lazy ? <span className="sr-only">Lazy-loaded plate placeholder</span> : null}
     </figure>
   );
 }
