@@ -320,10 +320,6 @@ function Hero() {
             src={plateImages.academy}
             geometry={<PlateOneGeometry />}
           />
-          <PlateCaption
-            label="Plate I · The New Academy"
-            text="The human is teaching, and the mathematics around them is coming alive."
-          />
         </div>
       </div>
     </section>
@@ -400,7 +396,6 @@ function Mission() {
               geometry={<PlateTwoGeometry />}
               lazy
             />
-            <PlateCaption label="Plate II · Athena and the geometry of intelligence" />
           </div>
           <article className="quote-card">
             <div className="quote-mark" aria-hidden="true">
@@ -606,11 +601,6 @@ function OpenRoles() {
             geometry={<PlateThreeGeometry />}
             lazy
             dark
-          />
-          <PlateCaption
-            dark
-            label="Plate III · The new wing"
-            text="What an extraordinary place to be, and what an ambitious thing to help build."
           />
         </div>
         <SectionHeader
@@ -871,15 +861,6 @@ function PlateFrame({ aspect, alt, geometry, lazy = false, dark = false, variant
       )}
       {SHOW_GEOMETRY ? geometry : null}
     </figure>
-  );
-}
-
-function PlateCaption({ label, text, dark = false }) {
-  return (
-    <div className={`plate-caption ${dark ? "on-dark" : ""}`}>
-      <span>{label}</span>
-      {text ? <em>&quot;{text}&quot;</em> : null}
-    </div>
   );
 }
 
