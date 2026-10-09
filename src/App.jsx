@@ -454,7 +454,7 @@ function AiPractice() {
               It&apos;s not a slogan — it&apos;s how the work <em>actually</em> gets done.
             </>
           }
-          lede="&quot;AI-first&quot; gets thrown around a lot. Here's what it concretely looks like across the company on any given Tuesday."
+          lede={'"AI-first" gets thrown around a lot. Here\'s what it concretely looks like across the company on any given Tuesday.'}
         />
         <div className="ai-grid">
           {aiCards.map((card) => (
@@ -560,7 +560,7 @@ function OpenRoles() {
           setJobs(Array.isArray(data.jobs) ? data.jobs : []);
           setStatus("ready");
         }
-      } catch (error) {
+      } catch {
         if (!cancelled) setStatus("error");
       }
     }
